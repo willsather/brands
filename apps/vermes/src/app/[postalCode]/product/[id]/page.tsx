@@ -71,8 +71,8 @@ export default async function ProductPage({
                 className="mt-4 w-full border border-gray-300 px-6 py-4 font-light text-sm transition-colors hover:border-gray-800"
               >
                 {postalCode !== "undefined"
-                  ? `BUY NOW IN STORE IN ${postalCode}`
-                  : "CHECK STORES"}
+                  ? `BUY NOW IN ${postalCode}`
+                  : "FIND IN STORES"}
               </button>
             </div>
 
