@@ -23,6 +23,7 @@ const navigationItems = [
     links: [
       {
         category: "Ready-to-wear",
+        href: "/category/ready-to-wear",
         items: [
           "Coats & Outerwear",
           "Jackets",
@@ -35,14 +36,17 @@ const navigationItems = [
       },
       {
         category: "Accessories",
+        href: "/category/jewelry",
         items: ["Hats", "Gloves", "Scarves & Ties", "Belts", "Fashion Jewelry"],
       },
       {
         category: "Bags & Clutches",
+        href: "/category/leather",
         items: ["Bags", "Clutches", "Small Leather Goods"],
       },
       {
         category: "Shoes",
+        href: "/category/womens-shoes",
         items: ["Boots & Ankle Boots", "Sneakers", "Sandals", "Pumps & Heels"],
       },
     ],
@@ -52,6 +56,7 @@ const navigationItems = [
     links: [
       {
         category: "Ready-to-wear",
+        href: "/category/ready-to-wear",
         items: [
           "Coats & Outerwear",
           "Jackets",
@@ -64,14 +69,17 @@ const navigationItems = [
       },
       {
         category: "Accessories",
+        href: "/category/jewelry",
         items: ["Hats", "Gloves", "Scarves & Ties", "Belts", "Fashion Jewelry"],
       },
       {
         category: "Bags & Luggage",
+        href: "/category/leather",
         items: ["Bags", "Briefcases", "Small Leather Goods", "Travel"],
       },
       {
         category: "Shoes",
+        href: "/category/mens-shoes",
         items: ["Boots", "Sneakers", "Loafers", "Sandals"],
       },
     ],
@@ -81,6 +89,7 @@ const navigationItems = [
     links: [
       {
         category: "Home",
+        href: "/category/tableware",
         items: [
           "Furniture",
           "Lighting",
@@ -91,10 +100,12 @@ const navigationItems = [
       },
       {
         category: "Outdoor",
+        href: "/category/tableware",
         items: ["Garden Furniture", "Beach", "Sports"],
       },
       {
         category: "Equestrian",
+        href: "/category/tableware",
         items: [
           "Riding Accessories",
           "Saddles",
@@ -109,10 +120,12 @@ const navigationItems = [
     links: [
       {
         category: "Jewelry",
+        href: "/category/jewelry",
         items: ["Necklaces", "Bracelets", "Rings", "Earrings", "Brooches"],
       },
       {
         category: "Watches",
+        href: "/category/jewelry",
         items: [
           "Women's Watches",
           "Men's Watches",
@@ -127,6 +140,7 @@ const navigationItems = [
     links: [
       {
         category: "Fragrances",
+        href: "/category/jewelry",
         items: [
           "Women's Fragrances",
           "Men's Fragrances",
@@ -136,6 +150,7 @@ const navigationItems = [
       },
       {
         category: "Make-up",
+        href: "/category/jewelry",
         items: ["Lipstick", "Face", "Eyes", "Nails"],
       },
     ],
@@ -145,6 +160,7 @@ const navigationItems = [
     links: [
       {
         category: "Gifts",
+        href: "/category/jewelry",
         items: [
           "Gifts for Her",
           "Gifts for Him",
@@ -154,6 +170,7 @@ const navigationItems = [
       },
       {
         category: "Petit H",
+        href: "/category/jewelry",
         items: ["Objects", "Accessories", "Jewelry", "Limited Editions"],
       },
     ],
@@ -163,10 +180,12 @@ const navigationItems = [
     links: [
       {
         category: "Special Editions",
+        href: "#about",
         items: ["Limited Collections", "Collaborations", "Exclusive Pieces"],
       },
       {
         category: "Services",
+        href: "#services",
         items: [
           "Repairs",
           "Personalization",
@@ -181,10 +200,12 @@ const navigationItems = [
     links: [
       {
         category: "The House of Hermès",
+        href: "#house",
         items: ["History", "Craftsmanship", "Sustainability", "Press"],
       },
       {
         category: "Contact",
+        href: "#contact",
         items: ["Find a Store", "Customer Service", "Careers", "FAQ"],
       },
     ],
@@ -448,15 +469,19 @@ export default function Navbar() {
             <div className="mx-auto grid max-w-7xl grid-cols-4 gap-8">
               {item.links.map((section) => (
                 <div key={section.category}>
-                  <h3 className="mb-3 font-medium text-gray-900 text-sm">
+                  <Link
+                    href={section.href}
+                    className="mb-3 font-medium text-gray-900 text-sm"
+                  >
                     {section.category}
-                  </h3>
+                  </Link>
                   <ul className="space-y-2">
                     {section.items.map((subItem) => (
                       <li key={subItem}>
                         <Link
-                          href="#"
+                          href={section.href}
                           className="text-gray-600 text-xs hover:text-black hover:underline"
+                          onClick={() => handleMouseLeave()}
                         >
                           {subItem}
                         </Link>
