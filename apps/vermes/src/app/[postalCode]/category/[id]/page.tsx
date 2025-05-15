@@ -1,11 +1,11 @@
-import Link from "next/link";
+import { notFound } from "next/navigation";
 
+import { ProductGrid } from "@/components/product-grid";
 import {
   getAllCategories,
   getCategoryName,
   getProductsByCategory,
 } from "@/lib/products";
-import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   const categories = getAllCategories();
@@ -43,36 +43,7 @@ export default async function CategoryPage({
       {/* Main Content */}
       <div className="px-4 md:px-8">
         <div className="flex flex-col md:flex-row">
-          {/* Product Grid */}
-          <div className="w-full">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {products.map((product) => (
-                <Link
-                  href={`/product/${product.id}`}
-                  key={product.id}
-                  className="group block transition-opacity hover:opacity-90"
-                >
-                  <div className="aspect-square overflow-hidden">
-                    <div className="relative h-full w-full">
-                      <img
-                        src={product.image || "/placeholder.svg"}
-                        alt={product.name}
-                        className="h-full w-full object-cover object-center"
-                      />
-                    </div>
-                  </div>
-                  <div className="mt-4">
-                    <h3 className="font-light">
-                      {product.name} {product.size && `${product.size}`}
-                    </h3>
-                    <p className="mt-1 text-muted-foreground text-sm">
-                      {product.price}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+          <ProductGrid products={products} />
         </div>
       </div>
     </main>
