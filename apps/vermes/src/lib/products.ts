@@ -11,80 +11,6 @@ export type Product = {
   featured?: boolean;
 };
 
-export const featuredShoes: Product[] = [
-  {
-    name: "Bouncing sneaker",
-    price: "$1,175",
-    category: "womens-shoes",
-    image:
-      "https://assets.hermes.com/is/image/hermesproduct/221898ZH94_front_wm_1?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
-    id: "bouncing-sneaker",
-  },
-  {
-    name: "Paris loafer",
-    price: "$1,375",
-    category: "womens-shoes",
-    image:
-      "https://assets.hermes.com/is/image/hermesproduct/251855ZAE5_front_wm_1?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
-    id: "paris-loafer",
-  },
-  {
-    name: "Junior sandal",
-    price: "$1,100",
-    category: "womens-shoes",
-    image:
-      "https://assets.hermes.com/is/image/hermesproduct/251988ZH90_front_wm_1?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
-    id: "junior-sandal",
-  },
-  {
-    name: "Trip espadrille",
-    price: "$880",
-    category: "womens-shoes",
-    image:
-      "https://assets.hermes.com/is/image/hermesproduct/211874ZHE5_worn_1?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
-    id: "trip-espadrille",
-  },
-];
-export const featuredJewelry: Product[] = [
-  {
-    name: "Athena bracelet",
-    price: "$910",
-    category: "jewelry",
-    image:
-      "https://assets.hermes.com/is/image/hermesproduct/500373FC89_front_wm_2?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
-    id: "/athena-bracelet",
-  },
-  {
-    name: "Mini Maillon earrings",
-    price: "$770",
-    category: "jewelry",
-    image:
-      "https://assets.hermes.com/is/image/hermesproduct/100052FE12_front_wm_2?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
-    id: "/mini-maillon-earrings",
-  },
-  {
-    name: "Athena simple stud ring",
-    price: "$385",
-    category: "jewelry",
-    image:
-      "https://assets.hermes.com/is/image/hermesproduct/500347FC89_front_wm_2?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
-    id: "/athena-simple-stud-ring",
-  },
-  {
-    name: "Mini Pop H pendant",
-    price: "$510",
-    category: "jewelry",
-    image:
-      "https://assets.hermes.com/is/image/hermesproduct/147992F%20B7_front_wm_2?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
-    id: "/mini-pop-h-pendant",
-  },
-];
-
-export const featuredProductsMap: Record<string, Product[]> = {
-  "mens-shoes": featuredShoes,
-  jewelry: featuredJewelry,
-};
-
 export const silkProducts: Product[] = [
   {
     id: "ready-go-scarf-45",
@@ -306,6 +232,21 @@ export const tablewareProducts: Product[] = [
 ];
 export const jewelryProducts: Product[] = [
   {
+    id: "mini-pop-h-pendant",
+    name: "Mini Pop H pendant",
+    price: "$510",
+    category: "jewelry",
+    featured: true,
+    image:
+      "https://assets.hermes.com/is/image/hermesproduct/147992F%20B7_front_wm_2?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
+    description:
+      "Pendant in lacquered metal.\n\n" +
+      "The curves of the iconic Pop H model are revisited in this mini version.\n\n" +
+      "Made in France\n\n" +
+      "Metallic finish: Yellow gold plated\n\n" +
+      'Total chain length: 15.7" | Pendant size: 0.35" x 0.28"',
+  },
+  {
     id: "athena-earrings",
     name: "Athena earrings",
     price: "$1,525",
@@ -324,6 +265,7 @@ export const jewelryProducts: Product[] = [
     name: "Athena bracelet",
     price: "$910",
     category: "jewelry",
+    featured: true,
     image:
       "https://assets.hermes.com/is/image/hermesproduct/500373FC89_front_wm_2?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
     description:
@@ -339,6 +281,7 @@ export const jewelryProducts: Product[] = [
     name: "Mini Maillon earrings",
     price: "$770",
     category: "jewelry",
+    featured: true,
     image:
       "https://assets.hermes.com/is/image/hermesproduct/100052FE12_front_wm_2?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
     description:
@@ -353,6 +296,7 @@ export const jewelryProducts: Product[] = [
     name: "Athena simple stud ring",
     price: "$385",
     category: "jewelry",
+    featured: true,
     image:
       "https://assets.hermes.com/is/image/hermesproduct/500347FC89_front_wm_2?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
     description:
@@ -586,6 +530,7 @@ export const mensShoesProducts: Product[] = [
     name: "Bouncing sneaker",
     price: "$1,050",
     category: "mens-shoes",
+    featured: true,
     image:
       "https://assets.hermes.com/is/image/hermesproduct/232856ZH1J_front_wm_1?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
     description:
@@ -602,8 +547,9 @@ export const mensShoesProducts: Product[] = [
     name: "Paris loafer",
     price: "$1,375",
     category: "mens-shoes",
+    featured: true,
     image:
-      "https://assets.hermes.com/is/image/hermesproduct/251855ZAE5_worn_2?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
+      "https://assets.hermes.com/is/image/hermesproduct/251855ZAE5_front_wm_1?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
     description:
       "Loafer in suede calfskin with signature Paris buckle.\n\n" +
       "For a chic look.\n\n" +
@@ -615,12 +561,22 @@ export const mensShoesProducts: Product[] = [
     name: "Trip espadrille",
     price: "$880",
     category: "mens-shoes",
+    featured: true,
     image:
       "https://assets.hermes.com/is/image/hermesproduct/211874ZHE5_worn_1?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
     description:
       "Espadrille in suede goatskin with rope sole.\n\n" +
       "A casual style perfect for summer.\n\n" +
       "Made in Spain",
+  },
+  {
+    id: "junior-sandal",
+    name: "Junior sandal",
+    price: "$1,100",
+    featured: true,
+    category: "mens-shoes",
+    image:
+      "https://assets.hermes.com/is/image/hermesproduct/251988ZH90_front_wm_1?size=3000,3000&extend=0,0,0,0&align=0,0&$product_item_grid_g$&wid=700&hei=700",
   },
 ];
 
@@ -667,7 +623,9 @@ export function getProductById(id: string): Product | undefined {
 }
 
 export function getFeaturedProducts(categoryId: string) {
-  return featuredProductsMap[categoryId] || [];
+  const categoryProducts = getProductsByCategory(categoryId);
+
+  return categoryProducts.filter((product) => product.featured);
 }
 
 export async function getPartnerProducts(id: string): Promise<Product[]> {
