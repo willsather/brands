@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function PromoSection() {
   return (
-    <section className="bg-[#F6F1EB] py-20">
+    <section className="bg-background py-20">
       <div className="mx-auto max-w-3xl px-4 text-center">
         <h2 className="mb-8 font-light text-3xl text-gray-800 tracking-widest md:text-4xl">
           AN ODE TO AUDACITY

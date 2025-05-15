@@ -1,18 +1,18 @@
+import Link from "next/link";
+
 import CategoryGrid from "@/components/category-grid";
-import CollapsibleFooter from "@/components/collapsible-footer";
-import Footer from "@/components/footer";
 import FullWidthImage from "@/components/full-width-image";
-import Navbar from "@/components/navbar";
 import ProductShowcase from "@/components/product-showcase";
 import PromoSection from "@/components/promo-section";
 import PromoSectionSandals from "@/components/promo-section-sandals";
-import { jewelryProducts, shoeProducts } from "@/data/products";
-import Link from "next/link";
+import { getFeaturedProducts } from "@/lib/products";
 
 export default function Home() {
+  const shoeProducts = getFeaturedProducts("mens-shoes");
+  const jewelryProducts = getFeaturedProducts("jewelry");
+
   return (
     <main>
-      <Navbar />
       <div className="relative h-[90vh] w-full">
         <div
           className="absolute inset-0 bg-center bg-cover"
@@ -42,16 +42,23 @@ export default function Home() {
       </div>
 
       <CategoryGrid />
+
       <PromoSectionSandals />
-      <ProductShowcase products={shoeProducts} />
+
+      <div className="mx-auto max-w-[1800px] px-4 md:px-8">
+        <ProductShowcase products={shoeProducts} />
+      </div>
+
       <PromoSection />
+
       <FullWidthImage
         src="https://assets.hermes.com/is/image/hermesedito/P_169_PE25_CROSS_Z_5?fit=wrap,0&wid=3840"
         alt="Hermès lifestyle image"
       />
-      <ProductShowcase products={jewelryProducts} />
-      <CollapsibleFooter />
-      <Footer />
+
+      <div className="mx-auto max-w-[1800px] px-4 md:px-8">
+        <ProductShowcase products={jewelryProducts} />
+      </div>
     </main>
   );
 }

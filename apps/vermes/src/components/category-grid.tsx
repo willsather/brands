@@ -35,12 +35,12 @@ const categories: CategoryItem[] = [
   {
     title: "SMALL LEATHER GOODS",
     image: "https://assets.hermes.com/is/image/hermesedito/039790CCQ0",
-    slug: "/category/small-leather-goods",
+    slug: "/category/leather",
   },
   {
     title: "HAIR ACCESSORIES",
     image: "https://assets.hermes.com/is/image/hermesedito/241015G%20RA",
-    slug: "/category/hair-accessories",
+    slug: "/category/hair",
   },
   {
     title: "MEN'S SHOES",
@@ -51,7 +51,7 @@ const categories: CategoryItem[] = [
 
 export default function CategoryGrid() {
   return (
-    <section className="mx-auto max-w-[1800px] bg-[#F6F1EB] px-4 py-16 md:px-8">
+    <section className="mx-auto max-w-[1800px] bg-background px-4 py-16 md:px-8">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
         {categories.map((category) => (
           <Link

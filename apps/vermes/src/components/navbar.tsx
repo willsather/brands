@@ -306,7 +306,6 @@ export default function Navbar() {
           ref={searchContainerRef}
           className={`${isMobile ? (isSearchFocused ? "flex-1" : "w-auto") : "flex items-center"} transition-all duration-300`}
         >
-          {/* Mobile Search Button */}
           <button
             type="button"
             className={`md:hidden ${isSearchFocused ? "hidden" : "block"}`}
@@ -318,7 +317,7 @@ export default function Navbar() {
 
           {/* Search Input - Shown on desktop or when focused on mobile */}
           <div
-            className={`relative ${isMobile ? (isSearchFocused ? "flex w-full items-center" : "hidden") : "block"}`}
+            className={`relative ${isMobile ? (isSearchFocused ? "flex items-center" : "hidden") : "block"}`}
           >
             {isSearchFocused && isMobile && (
               <button
@@ -364,7 +363,7 @@ export default function Navbar() {
 
         {/* Logo - Center on desktop, hidden when search is focused on mobile */}
         <div
-          className={`flex flex-1 justify-center ${isMobile && isSearchFocused ? "hidden" : "block"}`}
+          className={`flex flex-5 justify-center ${isMobile && isSearchFocused ? "hidden" : "block"}`}
         >
           <Link href="/" className="block">
             <div className="flex flex-col items-center">
@@ -375,17 +374,17 @@ export default function Navbar() {
 
         {/* Account and Cart - Hidden when search is focused on mobile */}
         <div
-          className={`flex items-center space-x-6 ${isMobile && isSearchFocused ? "hidden" : "block"}`}
+          className={`flex flex-1 items-center space-x-6 ${isMobile && isSearchFocused ? "hidden" : "block"}`}
         >
           <Link
-            href="/account"
+            href="#account"
             className="flex items-center text-gray-800 text-sm"
           >
             <User className="h-5 w-5 md:mr-1" />
             <span className="hidden md:inline">Account</span>
           </Link>
           <Link
-            href="/cart"
+            href="#cart"
             className="flex items-center text-gray-800 text-sm"
           >
             <ShoppingBag className="h-5 w-5 md:mr-1" />
@@ -464,7 +463,7 @@ export default function Navbar() {
           }`}
         >
           <div
-            className={`fixed inset-0 transform bg-[#F6F1EB] transition-transform duration-300 ease-in-out ${
+            className={`fixed inset-0 transform bg-background transition-transform duration-300 ease-in-out ${
               isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
             } flex flex-col`}
           >
@@ -540,11 +539,11 @@ export default function Navbar() {
             </div>
 
             {/* Bottom utility links */}
-            <div className="border-gray-200 border-t bg-[#F6F1EB]">
+            <div className="border-gray-200 border-t bg-background">
               <ul>
                 <li>
                   <Link
-                    href="/stores"
+                    href="#stores"
                     className="flex items-center px-6 py-4 font-light text-base text-gray-800"
                   >
                     <MapPin className="mr-4 h-5 w-5" />
@@ -553,7 +552,7 @@ export default function Navbar() {
                 </li>
                 <li>
                   <Link
-                    href="/account"
+                    href="#account"
                     className="flex items-center px-6 py-4 font-light text-base text-gray-800"
                   >
                     <User className="mr-4 h-5 w-5" />
@@ -562,7 +561,7 @@ export default function Navbar() {
                 </li>
                 <li>
                   <Link
-                    href="/contact"
+                    href="#contact"
                     className="flex items-center px-6 py-4 font-light text-base text-gray-800"
                   >
                     <MessageCircle className="mr-4 h-5 w-5" />
