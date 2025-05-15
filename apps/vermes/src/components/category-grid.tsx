@@ -51,30 +51,28 @@ const categories: CategoryItem[] = [
 
 export default function CategoryGrid() {
   return (
-    <section className="mx-auto max-w-[1800px] bg-background px-4 py-16 md:px-8">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-        {categories.map((category) => (
-          <Link
-            href={category.slug}
-            key={category.slug}
-            className="group block transition-opacity hover:opacity-90"
-          >
-            <div className="aspect-square overflow-hidden bg-[#f8f8f6]">
-              <div className="relative h-full w-full">
-                {/* Using regular img tag for external images */}
-                <img
-                  src={category.image || "/placeholder.svg"}
-                  alt={category.title}
-                  className="h-full w-full object-cover object-center"
-                />
-              </div>
+    <section className="mx-auto grid grid-cols-2 gap-4 bg-background px-4 py-16 md:grid-cols-4 md:px-8">
+      {categories.map((category) => (
+        <Link
+          href={category.slug}
+          key={category.slug}
+          className="group block transition-opacity hover:opacity-90"
+        >
+          <div className="aspect-square overflow-hidden bg-[#f8f8f6]">
+            <div className="relative h-full w-full">
+              {/* Using regular img tag for external images */}
+              <img
+                src={category.image || "/placeholder.svg"}
+                alt={category.title}
+                className="h-full w-full object-cover object-center"
+              />
             </div>
-            <h3 className="mt-3 font-light text-gray-800 text-xs tracking-wider">
-              {category.title}
-            </h3>
-          </Link>
-        ))}
-      </div>
+          </div>
+          <h3 className="mt-3 font-light text-gray-800 text-xs tracking-wider">
+            {category.title}
+          </h3>
+        </Link>
+      ))}
     </section>
   );
 }

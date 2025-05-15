@@ -13,7 +13,7 @@ export default function ProductShowcase({
 }: ProductShowcaseProps) {
   return (
     <section className="w-full py-16" style={{ backgroundColor }}>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {products.map((product) => (
           <Link
             href={`/product/${product.id}`}
