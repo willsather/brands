@@ -250,18 +250,17 @@ export default function Navbar() {
   };
 
   const toggleMobileSearch = () => {
-    if (isMobile) {
-      setIsSearchFocused(!isSearchFocused);
-      if (!isSearchFocused && searchInputRef.current) {
-        setTimeout(() => {
-          searchInputRef.current?.focus();
-        }, 100);
-      }
+    setIsSearchFocused((sf) => !sf);
+
+    if (searchInputRef.current) {
+      setTimeout(() => {
+        searchInputRef.current?.focus();
+      }, 100);
     }
   };
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen((mo) => !mo);
   };
 
   const completeSearch = () => {
