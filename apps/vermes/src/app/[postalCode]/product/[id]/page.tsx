@@ -70,9 +70,7 @@ export default async function ProductPage({
                 type="button"
                 className="mt-4 w-full border border-gray-300 px-6 py-4 font-light text-sm transition-colors hover:border-gray-800"
               >
-                {postalCode !== "undefined"
-                  ? `BUY NOW IN ${postalCode}`
-                  : "FIND IN STORES"}
+                FIND IN STORES
               </button>
             </div>
 
@@ -93,7 +91,16 @@ export default async function ProductPage({
                 <p className="mt-2 font-light text-gray-600 text-sm">
                   Complimentary standard shipping
                   <br />
-                  Estimated delivery: 2-4 business days
+                  Estimated delivery
+                  {postalCode !== "undefined" ? (
+                    <>
+                      {" "}
+                      to <span className="font-bold">{postalCode}</span>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                  : 2-4 business days
                   <br />
                   Free returns within 30 days
                 </p>
