@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Input } from "@brands/ui/components/input";
 import { Logo } from "./logo";
 import MobileNavbar from "./mobile-navbar";
 
@@ -302,10 +303,10 @@ export default function Navbar() {
 
           {/* Search Input */}
           <div
-            className={`w-full md:w-64 ${isSearchFocused ? "flex" : "hidden md:flex"} items-center`}
+            className={`w-full md:w-64 ${isSearchFocused ? "flex" : "hidden md:flex"} items-center border-foreground border-b`}
           >
             <Search className="mt-1 hidden w-8 pr-2 text-gray-800/50 md:flex" />
-            <input
+            <Input
               ref={searchInputRef}
               type="text"
               value={searchValue}
@@ -314,7 +315,7 @@ export default function Navbar() {
               onFocus={() => setIsSearchFocused(true)}
               onBlur={() => !isMobile && setIsSearchFocused(false)}
               placeholder="Search"
-              className="w-full border-gray-800 border-b bg-transparent py-2 text-gray-800 text-sm placeholder:text-gray-800 focus:outline-none"
+              className="border-none shadow-none focus-visible:outline-none focus-visible:ring-0"
             />
             {(isSearchFocused || searchValue) && (
               <button
