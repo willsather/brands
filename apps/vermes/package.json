@@ -11,6 +11,7 @@
   "dependencies": {
     "@brands/ui": "workspace:*",
     "@vercel/analytics": "^1.5.0",
+    "@vercel/functions": "^2.0.3",
     "@vercel/speed-insights": "^1.2.0",
     "@vercel/toolbar": "^0.1.36",
     "clsx": "^2.1.1",

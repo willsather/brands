@@ -18,9 +18,9 @@ export async function generateStaticParams() {
 export default async function ProductPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: string; postalCode: string }>;
 }) {
-  const { id } = await params;
+  const { id, postalCode } = await params;
   const product = getProductById(id);
 
   if (product == null) {
@@ -70,7 +70,9 @@ export default async function ProductPage({
                 type="button"
                 className="mt-4 w-full border border-gray-300 px-6 py-4 font-light text-sm transition-colors hover:border-gray-800"
               >
-                FIND IN STORE
+                {postalCode !== "undefined"
+                  ? `BUY NOW IN STORE IN ${postalCode}`
+                  : "CHECK STORES"}
               </button>
             </div>
 
