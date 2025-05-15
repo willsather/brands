@@ -12,6 +12,7 @@ export async function generateStaticParams() {
 
   return products.map(({ id }) => ({
     id,
+    postalCode: "undefined",
   }));
 }
 

@@ -12,6 +12,7 @@ export async function generateStaticParams() {
 
   return categories.map((id) => ({
     id,
+    postalCode: "undefined",
   }));
 }
 
