@@ -12,11 +12,11 @@ import {
   X,
 } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { Logo } from "./logo";
 
-// Navigation data structure
 const navigationItems = [
   {
     title: "WOMEN",
@@ -192,6 +192,8 @@ const navigationItems = [
 ];
 
 export default function Navbar() {
+  const router = useRouter();
+
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileExpandedCategories, setMobileExpandedCategories] = useState<{
     [key: string]: boolean;
@@ -218,7 +220,6 @@ export default function Navbar() {
       setIsMobile(window.innerWidth < 768);
     };
 
-    // Initial check
     handleResize();
 
     window.addEventListener("scroll", handleScroll);
@@ -281,6 +282,19 @@ export default function Navbar() {
     }));
   };
 
+  const completeSearch = () => {
+    if (searchInputRef.current) {
+      searchInputRef.current.blur();
+      setIsSearchFocused(false);
+    }
+
+    const query = searchValue;
+
+    setSearchValue("");
+
+    router.push(`/search?q=${query}`);
+  };
+
   return (
     <header
       className={`fixed top-0 right-0 left-0 z-40 ${
@@ -339,6 +353,7 @@ export default function Navbar() {
                 placeholder="Search"
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && completeSearch()}
                 className={`${isMobile && isSearchFocused ? "pl-0" : "pl-8"} w-full border-gray-800 border-b bg-transparent py-2 pr-8 text-gray-800 text-sm placeholder:text-gray-800 focus:outline-none focus:placeholder:text-transparent`}
                 onFocus={() => setIsSearchFocused(true)}
                 onBlur={() => {

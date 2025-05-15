@@ -622,6 +622,30 @@ export function getProductById(id: string): Product | undefined {
   return getAllProducts().find((product) => product.id === id);
 }
 
+export async function searchProducts(query: string): Promise<Product[]> {
+  const products = getAllProducts();
+
+  const lowerCaseQuery = query.toLowerCase();
+
+  const nameMatches: Product[] = [];
+  const idMatches: Product[] = [];
+  const descriptionMatches: Product[] = [];
+
+  for (const product of products) {
+    if (product.name.toLowerCase().includes(lowerCaseQuery)) {
+      nameMatches.push(product);
+    } else if (product.id.toLowerCase().includes(lowerCaseQuery)) {
+      idMatches.push(product);
+    } else if (product?.description?.toLowerCase().includes(lowerCaseQuery)) {
+      descriptionMatches.push(product);
+    }
+  }
+
+  await delay(500);
+
+  return [...nameMatches, ...idMatches, ...descriptionMatches];
+}
+
 export function getFeaturedProducts(categoryId: string) {
   const categoryProducts = getProductsByCategory(categoryId);
 
