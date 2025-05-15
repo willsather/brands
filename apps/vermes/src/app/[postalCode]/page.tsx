@@ -7,6 +7,16 @@ import PromoSection from "@/components/promo-section";
 import PromoSectionSandals from "@/components/promo-section-sandals";
 import { getFeaturedProducts } from "@/lib/products";
 
+export async function generateStaticParams() {
+  const params = [];
+
+  params.push({
+    postalCode: "undefined",
+  });
+
+  return params;
+}
+
 export default function Home() {
   const shoeProducts = getFeaturedProducts("mens-shoes");
   const jewelryProducts = getFeaturedProducts("jewelry");

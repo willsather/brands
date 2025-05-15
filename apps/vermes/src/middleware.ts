@@ -3,9 +3,11 @@ import { type NextRequest, NextResponse } from "next/server";
 
 // Get postal code from Vercel request
 function getPostalCode(request: NextRequest) {
-  const { postalCode } = geolocation(request);
+  const geo = geolocation(request);
 
-  return postalCode ?? "undefined";
+  console.log(geo);
+
+  return geo?.postalCode ?? "undefined";
 }
 
 export async function middleware(request: NextRequest) {
