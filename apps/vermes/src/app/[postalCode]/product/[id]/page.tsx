@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import Image from "next/image";
 
 import {
   PerfectPartner,
@@ -43,7 +43,7 @@ export default async function ProductPage({
                 alt={product.name}
                 width={500}
                 height={500}
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full bg-muted-foreground/10 object-cover object-center"
               />
             </div>
           </div>

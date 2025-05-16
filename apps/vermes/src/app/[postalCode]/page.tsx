@@ -32,6 +32,7 @@ export default async function Home() {
           objectFit="cover"
           objectPosition="center"
           priority
+          className="bg-muted-foreground/10"
         />
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute bottom-16 left-8 max-w-xl text-white md:left-16">

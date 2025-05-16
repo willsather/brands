@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 import type { Product } from "@/lib/products";
 
@@ -29,7 +29,7 @@ export default function ProductShowcase({
                   alt={product.name}
                   width={500}
                   height={500}
-                  className="h-full w-full object-cover object-center"
+                  className="h-full w-full bg-muted-foreground/10 object-cover object-center"
                 />
               </div>
             </div>
