@@ -13,11 +13,31 @@ This application features:
 
 These three types of pages demonstrate the powerful rendering strategies that come out of the box with Next.js.
 
+## Partial Prerendering
+
+The product pages (`/product/[id]`) are 
+[Partial Prerendered](https://nextjs.org/docs/app/getting-started/partial-prerendering#enabling-partial-prerendering), 
+which means that Next.js combines static and dynamic content on the same page. This allows for a performant initial 
+load while streaming in data after the initial load.  
+
+This enables an incredibly performant page load while still maintaining the customization and personalization of a 
+dynamic page.  To simulate this, the product page dynamically renders a `Perfect Partner` component to dynamically
+stream in _similar_ products (this simulation just provides random products, but the technology at play is the same). 
+
+## Incremental Static Regeneration
+
+The category pages (`/category/[id]`) pages are using 
+[Incremental Static Regeneration](https://nextjs.org/docs/app/building-your-application/data-fetching/incremental-static-regeneration)
+which enables you statically build pages during the build process while being able to regenerate (rebuild) each page on demand.  
+
+This is a highly performant way to serve static pages to users and only update the static pages when the underlying
+data changes.
+
 ## Edge Config
 
 The Product API (a JSON list of products and categories) is stored
 in [Vercel Edge Config](https://vercel.com/docs/edge-config) and invoked in `@/lib/products.ts`.  These `fetch` calls
-are using `{ cache: "force-cache" }` to further demonstrate the various rendering stragies.  
+are using `{ cache: "force-cache" }` to further demonstrate the various rendering strategies.  
 
 This Edge Config is deployed in `@willsather`'s Vercel team. 
 
