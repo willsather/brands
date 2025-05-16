@@ -51,6 +51,8 @@ are using `{ cache: "force-cache" }` to further demonstrate the various renderin
 
 This Edge Config is deployed in `@willsather`'s Vercel team. 
 
+This list of products is also exposed via a Next.js API route (`/api/products`), just in case it's useful.
+
 ## Running Locally
 
 This repository is a simple Turborepo starter that contains the basic Turborepo setup and configuration.
