@@ -34,6 +34,9 @@ which enables you statically build pages during the build process while being ab
 This is a highly performant way to serve static pages to users and only update the static pages when the underlying
 data changes.
 
+To revalidate a path, you can invoke `/api/revalidate?path=` (for example: `/api/revalidate?path=product/grace-silk-bloom-headband`).
+This endpoint uses the Next.js [`revalidatePath`](https://nextjs.org/docs/app/api-reference/functions/revalidatePath) API.
+
 ## Edge Config
 
 The Product API (a JSON list of products and categories) is stored
