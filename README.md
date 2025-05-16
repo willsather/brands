@@ -37,6 +37,12 @@ data changes.
 To revalidate a path, you can invoke `/api/revalidate?path=` (for example: `/api/revalidate?path=product/grace-silk-bloom-headband`).
 This endpoint uses the Next.js [`revalidatePath`](https://nextjs.org/docs/app/api-reference/functions/revalidatePath) API.
 
+## Middleware
+
+This application also uses Next.js `middleware.ts` and Vercel's `geolocation` API to grab the user's `postalCode` and pass to each page.
+This allows for the Product page to show `Estimated Delivery to ${USER_POSTAL_CODE}: 2-4 days` without needing to dynamically render the entire 
+page or fetch user data on the client.
+
 ## Edge Config
 
 The Product API (a JSON list of products and categories) is stored
