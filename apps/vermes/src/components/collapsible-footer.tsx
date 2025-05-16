@@ -159,6 +159,7 @@ export default function CollapsibleFooter() {
                     <Link
                       href={link.href}
                       className="font-light text-gray-600 text-sm hover:text-black"
+                      prefetch
                     >
                       {link.text}
                     </Link>

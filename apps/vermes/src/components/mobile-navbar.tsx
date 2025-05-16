@@ -68,6 +68,7 @@ export default function MobileNavbar({
                             href={href}
                             onClick={onClose}
                             className="text-gray-800"
+                            prefetch
                           >
                             {category}
                           </Link>
@@ -79,6 +80,7 @@ export default function MobileNavbar({
                                 href={href}
                                 onClick={onClose}
                                 className="text-gray-700 text-sm"
+                                prefetch
                               >
                                 {item}
                               </Link>
@@ -98,6 +100,7 @@ export default function MobileNavbar({
           <Link
             href="/store-locator"
             className="flex items-center gap-3 text-gray-800"
+            prefetch
           >
             <MapPin className="h-5 w-5" />
             <span>Find a store</span>
@@ -105,6 +108,7 @@ export default function MobileNavbar({
           <Link
             href="/account"
             className="flex items-center gap-3 text-gray-800"
+            prefetch
           >
             <User className="h-5 w-5" />
             <span>Account</span>
@@ -112,6 +116,7 @@ export default function MobileNavbar({
           <Link
             href="/contact"
             className="flex items-center gap-3 text-gray-800"
+            prefetch
           >
             <MessageCircle className="h-5 w-5" />
             <span>Contact us</span>

@@ -24,12 +24,14 @@ export default function Footer() {
             <Link
               href="tel:800-441-4488"
               className="mb-4 block font-light text-gray-800 text-sm hover:underline"
+              prefetch
             >
               800-441-4488
             </Link>
             <Link
               href="/contact"
               className="font-light text-gray-800 text-sm hover:underline"
+              prefetch
             >
               Email us
             </Link>
@@ -62,6 +64,7 @@ export default function Footer() {
                 href="https://www.youtube.com/hermes"
                 aria-label="YouTube"
                 className="text-gray-600 hover:text-gray-900"
+                prefetch
               >
                 <Youtube size={24} />
               </Link>
@@ -69,6 +72,7 @@ export default function Footer() {
                 href="https://www.facebook.com/hermes"
                 aria-label="Facebook"
                 className="text-gray-600 hover:text-gray-900"
+                prefetch
               >
                 <Facebook size={24} />
               </Link>
@@ -76,6 +80,7 @@ export default function Footer() {
                 href="https://www.instagram.com/hermes"
                 aria-label="Instagram"
                 className="text-gray-600 hover:text-gray-900"
+                prefetch
               >
                 <Instagram size={24} />
               </Link>
@@ -83,6 +88,7 @@ export default function Footer() {
                 href="https://twitter.com/hermes"
                 aria-label="Twitter"
                 className="text-gray-600 hover:text-gray-900"
+                prefetch
               >
                 <Twitter size={24} />
               </Link>

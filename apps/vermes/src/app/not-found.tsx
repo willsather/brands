@@ -10,6 +10,7 @@ export default function RootNotFound() {
           <Link
             href="/"
             className="inline-block border border-gray-300 px-6 py-3 font-light text-sm transition-colors hover:border-gray-800"
+            prefetch
           >
             Return to Home
           </Link>

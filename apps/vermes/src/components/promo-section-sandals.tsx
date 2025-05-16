@@ -14,8 +14,9 @@ export default function PromoSectionSandals() {
         </p>
         <div className="flex justify-center">
           <Link
-            href="/categories/shoes"
+            href="/category/mens-shoes"
             className="group inline-block font-light text-gray-800 text-sm tracking-wider"
+            prefetch
           >
             <span>AIM FOR ELEGANCE</span>
             <div className="mt-1 h-px w-full bg-gray-400 transition-all group-hover:bg-black" />

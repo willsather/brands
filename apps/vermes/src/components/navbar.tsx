@@ -333,6 +333,7 @@ export default function Navbar() {
           <Link
             href="/"
             className={`${isMobile && isSearchFocused ? "hidden" : "flex justify-center"}`}
+            prefetch
           >
             <Logo />
           </Link>
@@ -344,6 +345,7 @@ export default function Navbar() {
             <Link
               href="#account"
               className="flex items-center text-gray-800 text-sm"
+              prefetch
             >
               <User className="h-5 w-5 md:mr-1" />
               <span className="hidden md:inline">Account</span>
@@ -351,6 +353,7 @@ export default function Navbar() {
             <Link
               href="#cart"
               className="flex items-center text-gray-800 text-sm"
+              prefetch
             >
               <ShoppingBag className="h-5 w-5 md:mr-1" />
               <span className="hidden md:inline">Cart</span>
@@ -399,6 +402,7 @@ export default function Navbar() {
                     <Link
                       href={section.href}
                       className="mb-3 font-medium text-gray-900 text-sm"
+                      prefetch
                     >
                       {section.category}
                     </Link>
@@ -409,6 +413,7 @@ export default function Navbar() {
                             href={section.href}
                             className="text-gray-600 text-xs hover:text-black hover:underline"
                             onClick={handleMouseLeave}
+                            prefetch
                           >
                             {subItem}
                           </Link>

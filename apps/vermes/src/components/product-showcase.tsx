@@ -19,6 +19,7 @@ export default function ProductShowcase({
             href={`/product/${product.id}`}
             key={product.id}
             className="group block transition-opacity hover:opacity-90"
+            prefetch
           >
             <div className="aspect-square overflow-hidden bg-[#e9e9e7]">
               <div className="relative h-full w-full">

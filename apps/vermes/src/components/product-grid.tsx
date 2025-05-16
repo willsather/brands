@@ -11,6 +11,7 @@ export function ProductGrid({ products }: { products: Product[] }) {
             href={`/product/${product.id}`}
             key={product.id}
             className="group block transition-opacity hover:opacity-90"
+            prefetch
           >
             <div className="aspect-square overflow-hidden">
               <div className="relative h-full w-full">

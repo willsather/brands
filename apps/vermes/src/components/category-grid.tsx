@@ -57,6 +57,7 @@ export default function CategoryGrid() {
           href={category.slug}
           key={category.slug}
           className="group block transition-opacity hover:opacity-90"
+          prefetch
         >
           <div className="aspect-square overflow-hidden bg-[#f8f8f6]">
             <div className="relative h-full w-full">

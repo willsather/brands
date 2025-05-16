@@ -44,6 +44,7 @@ export default async function Home() {
             <Link
               href="#"
               className="inline-block border-white border-b pb-1 font-light text-sm tracking-wider transition-all hover:border-orange-500 hover:text-orange-500"
+              prefetch
             >
               TURN HEADS
             </Link>
