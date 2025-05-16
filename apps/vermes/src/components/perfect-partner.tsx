@@ -25,8 +25,8 @@ export function PerfectPartnerSkeleton() {
   );
 }
 
-export async function PerfectPartner({ id }: { id: string }) {
-  const recommendedProducts = await getPartnerProducts(id);
+export async function PerfectPartner() {
+  const recommendedProducts = await getPartnerProducts();
 
   return (
     <div className="mt-16">

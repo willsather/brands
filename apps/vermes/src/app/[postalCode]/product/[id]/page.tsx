@@ -5,10 +5,12 @@ import {
   PerfectPartner,
   PerfectPartnerSkeleton,
 } from "@/components/perfect-partner";
-import { getAllProducts, getProductById } from "@/lib/products";
+import { getProduct, getProducts } from "@/lib/products";
+
+export const experimental_ppr = true;
 
 export async function generateStaticParams() {
-  const products = getAllProducts();
+  const products = await getProducts();
 
   return products.map(({ id }) => ({
     id,
@@ -22,7 +24,7 @@ export default async function ProductPage({
   params: Promise<{ id: string; postalCode: string }>;
 }) {
   const { id, postalCode } = await params;
-  const product = getProductById(id);
+  const product = await getProduct(id);
 
   if (product == null) {
     notFound();
@@ -111,7 +113,7 @@ export default async function ProductPage({
         </div>
 
         <Suspense fallback={<PerfectPartnerSkeleton />}>
-          <PerfectPartner id={id} />
+          <PerfectPartner />
         </Suspense>
       </div>
     </main>

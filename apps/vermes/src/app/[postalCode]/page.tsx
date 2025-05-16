@@ -17,9 +17,9 @@ export async function generateStaticParams() {
   return params;
 }
 
-export default function Home() {
-  const shoeProducts = getFeaturedProducts("mens-shoes");
-  const jewelryProducts = getFeaturedProducts("jewelry");
+export default async function Home() {
+  const shoeProducts = await getFeaturedProducts("mens-shoes");
+  const jewelryProducts = await getFeaturedProducts("jewelry");
 
   return (
     <main>

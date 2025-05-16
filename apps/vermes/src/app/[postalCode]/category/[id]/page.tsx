@@ -2,13 +2,13 @@ import { notFound } from "next/navigation";
 
 import { ProductGrid } from "@/components/product-grid";
 import {
-  getAllCategories,
+  getCategories,
   getCategoryName,
   getProductsByCategory,
 } from "@/lib/products";
 
 export async function generateStaticParams() {
-  const categories = getAllCategories();
+  const categories = await getCategories();
 
   return categories.map((id) => ({
     id,
@@ -23,13 +23,13 @@ export default async function CategoryPage({
 }) {
   const { id } = await params;
 
-  const category = getCategoryName(id);
+  const category = await getCategoryName(id);
 
   if (category == null) {
     notFound();
   }
 
-  const products = getProductsByCategory(id);
+  const products = await getProductsByCategory(id);
 
   return (
     <main className="mt-32 bg-background pb-16 md:mt-48">

@@ -1,6 +1,27 @@
-# Turborepo Starter
+# Brands
 
-## Getting Started
+This monorepo is built around creating clones of existing websites but built to highlight the feature-set of Next.js & 
+Vercel.
+
+Currently, the one application is a clone of [`hermes.com`](https://www.hermes.com/us/en/) using Next.js and Vercel.
+
+This application features:
+
+* Home Page (Static) (`/`)
+* Category Pages (ISR) (`/category/[id]`)
+* Product Pages (PPR) (`/product/[id]`)
+
+These three types of pages demonstrate the powerful rendering strategies that come out of the box with Next.js.
+
+## Edge Config
+
+The Product API (a JSON list of products and categories) is stored
+in [Vercel Edge Config](https://vercel.com/docs/edge-config) and invoked in `@/lib/products.ts`.  These `fetch` calls
+are using `{ cache: "force-cache" }` to further demonstrate the various rendering stragies.  
+
+This Edge Config is deployed in `@willsather`'s Vercel team. 
+
+## Running Locally
 
 This repository is a simple Turborepo starter that contains the basic Turborepo setup and configuration.
 
@@ -12,8 +33,6 @@ pnpm install
 pnpm dev
 
 pnpm build
-
-pnpm test
 ```
 
 This project also has some configured some tools like:
@@ -26,7 +45,7 @@ This project also has some configured some tools like:
 
 Located under `/apps`, you will find an application.
 
-- `web`: a simple [Next.js](https://nextjs.org/) app
+- `vermes`: a [Next.js](https://nextjs.org/) clone of Hermes
 
 ## Packages
 
