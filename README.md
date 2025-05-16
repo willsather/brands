@@ -10,8 +10,9 @@ This application features:
 * Home Page (Static) (`/`)
 * Category Pages (ISR) (`/category/[id]`)
 * Product Pages (PPR) (`/product/[id]`)
+* Search Page (Dynamic) (`/search?q=`)
 
-These three types of pages demonstrate the powerful rendering strategies that come out of the box with Next.js.
+These four types of pages demonstrate the powerful rendering strategies that come out of the box with Next.js.
 
 ## Partial Prerendering
 
