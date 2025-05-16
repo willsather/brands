@@ -51,7 +51,8 @@ are using `{ cache: "force-cache" }` to further demonstrate the various renderin
 
 This Edge Config is deployed in `@willsather`'s Vercel team. 
 
-This list of products is also exposed via a Next.js API route (`/api/products`), just in case it's useful.
+This list of products is also exposed via a Next.js API route (`/api/products` and `/api/products/[id]`), just in 
+case it's useful.
 
 ## Running Locally
 
