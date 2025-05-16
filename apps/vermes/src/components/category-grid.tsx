@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type CategoryItem = {
@@ -61,10 +62,11 @@ export default function CategoryGrid() {
         >
           <div className="aspect-square overflow-hidden bg-[#f8f8f6]">
             <div className="relative h-full w-full">
-              {/* Using regular img tag for external images */}
-              <img
-                src={category.image || "/placeholder.svg"}
+              <Image
+                src={category.image}
                 alt={category.title}
+                width={500}
+                height={500}
                 className="h-full w-full object-cover object-center"
               />
             </div>

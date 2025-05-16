@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import type { Product } from "@/lib/products";
 
@@ -23,9 +24,11 @@ export default function ProductShowcase({
           >
             <div className="aspect-square overflow-hidden bg-[#e9e9e7]">
               <div className="relative h-full w-full">
-                <img
-                  src={product.image || "/placeholder.svg"}
+                <Image
+                  src={product.image}
                   alt={product.name}
+                  width={500}
+                  height={500}
                   className="h-full w-full object-cover object-center"
                 />
               </div>

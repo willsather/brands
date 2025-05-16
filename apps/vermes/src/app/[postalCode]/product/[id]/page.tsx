@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import Image from "next/image";
 
 import {
   PerfectPartner,
@@ -37,9 +38,11 @@ export default async function ProductPage({
           {/* Product Image */}
           <div className="md:w-1/2">
             <div className="aspect-square bg-[#e9e9e7]">
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
+                width={500}
+                height={500}
                 className="h-full w-full object-cover object-center"
               />
             </div>

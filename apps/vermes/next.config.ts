@@ -5,6 +5,15 @@ const nextConfig: NextConfig = {
     ppr: true,
     inlineCss: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.hermes.com",
+        pathname: "**",
+      },
+    ],
+  },
 };
 
 const withVercelToolbar = require("@vercel/toolbar/plugins/next")();

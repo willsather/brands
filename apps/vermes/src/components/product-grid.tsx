@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import type { Product } from "@/lib/products";
@@ -15,9 +16,11 @@ export function ProductGrid({ products }: { products: Product[] }) {
           >
             <div className="aspect-square overflow-hidden">
               <div className="relative h-full w-full">
-                <img
-                  src={product.image || "/placeholder.svg"}
+                <Image
+                  src={product.image}
                   alt={product.name}
+                  width={500}
+                  height={500}
                   className="h-full w-full object-cover object-center"
                 />
               </div>
