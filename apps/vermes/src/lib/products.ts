@@ -25,7 +25,7 @@ export async function getProducts(): Promise<Product[]> {
   return data.items.products as Product[];
 }
 
-export async function getCategories(): Promise<string[]> {
+export async function getCategories(): Promise<{ [id: string]: string }> {
   if (process.env.EDGE_CONFIG == null) {
     throw new Error(
       "Edge config not found. Please set the EDGE_CONFIG environment variable.",
@@ -36,9 +36,7 @@ export async function getCategories(): Promise<string[]> {
     cache: "no-store", // force cache to demonstrate ppr
   }).then(async (res) => await res.json());
 
-  const categoryMap = data.items.categories as { [key: string]: string[] };
-
-  return Object.keys(categoryMap);
+  return data.items.categories as { [id: string]: string };
 }
 
 export async function getProductsByCategory(
@@ -49,12 +47,26 @@ export async function getProductsByCategory(
   return products.filter((product) => product.category === category);
 }
 
+export async function getCategoryNames(): Promise<string[]> {
+  const categories = await getCategories();
+
+  return Object.values(categories);
+}
+
+export async function getCategoryIds(): Promise<string[]> {
+  const categories = await getCategories();
+
+  return Object.keys(categories);
+}
+
 export async function getCategoryName(
-  category: string,
+  categoryId: string,
 ): Promise<string | undefined> {
   const categories = await getCategories();
 
-  return categories.find((c) => c === category);
+  const category = Object.entries(categories).find(([id]) => id === categoryId);
+
+  return category == null ? undefined : category[1];
 }
 
 export async function getProduct(id: string): Promise<Product | undefined> {

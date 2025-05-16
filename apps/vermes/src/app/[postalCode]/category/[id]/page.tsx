@@ -2,15 +2,15 @@ import { notFound } from "next/navigation";
 
 import { ProductGrid } from "@/components/product-grid";
 import {
-  getCategories,
+  getCategoryIds,
   getCategoryName,
   getProductsByCategory,
 } from "@/lib/products";
 
 export async function generateStaticParams() {
-  const categories = await getCategories();
+  const categoryIds = await getCategoryIds();
 
-  return categories.map((id) => ({
+  return categoryIds.map((id) => ({
     id,
     postalCode: "undefined",
   }));
