@@ -334,6 +334,7 @@ export default function Navbar() {
             href="/"
             className={`${isMobile && isSearchFocused ? "hidden" : "flex justify-center"}`}
             prefetch
+            aria-label="Hermes"
           >
             <Logo />
           </Link>

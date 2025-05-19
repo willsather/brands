@@ -31,7 +31,7 @@ export default async function Home() {
           width={3000}
           height={3000}
           priority
-          className="bg-muted-foreground/10"
+          className="h-full w-full bg-muted-foreground/10 object-cover"
         />
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute bottom-16 left-8 max-w-xl text-white md:left-16">

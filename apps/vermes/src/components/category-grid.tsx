@@ -4,6 +4,7 @@ import Link from "next/link";
 type CategoryItem = {
   title: string;
   image: string;
+  alt: string;
   slug: string;
 };
 
@@ -11,41 +12,49 @@ const categories: CategoryItem[] = [
   {
     title: "WOMEN'S SILK",
     image: "https://assets.hermes.com/is/image/hermesedito/893933S%2003",
+    alt: "Ready... Go! scarf 45",
     slug: "/category/womens-silk",
   },
   {
     title: "WOMEN'S SHOES",
     image: "https://assets.hermes.com/is/image/hermesedito/212010Z%20AY%20zoom",
+    alt: "Santorini Sandal",
     slug: "/category/womens-shoes",
   },
   {
     title: "TABLEWARE",
     image: "https://assets.hermes.com/is/image/hermesedito/103978M%2006",
+    alt: "Interligne Napkin",
     slug: "/category/tableware",
   },
   {
     title: "FASHION JEWELRY",
     image: "https://assets.hermes.com/is/image/hermesedito/100053FOE8",
+    alt: "Mini Maillon earrings",
     slug: "/category/jewelry",
   },
   {
     title: "WOMEN'S READY-TO-WEAR",
     image: "https://assets.hermes.com/is/image/hermesedito/5E3737D1AY",
+    alt: "Bride de Gala en Fleurs shirt",
     slug: "/category/ready-to-wear",
   },
   {
     title: "SMALL LEATHER GOODS",
     image: "https://assets.hermes.com/is/image/hermesedito/039790CCQ0",
+    alt: "Customizable Calvi card holder",
     slug: "/category/leather",
   },
   {
     title: "HAIR ACCESSORIES",
     image: "https://assets.hermes.com/is/image/hermesedito/241015G%20RA",
+    alt: "Sangles en Zigzag Bandana Grenelle PM hair clip",
     slug: "/category/hair",
   },
   {
     title: "MEN'S SHOES",
     image: "https://assets.hermes.com/is/image/hermesedito/222858ZHVT",
+    alt: "Chypre sandal",
     slug: "/category/mens-shoes",
   },
 ];
@@ -64,7 +73,7 @@ export default function CategoryGrid() {
             <div className="relative h-full w-full">
               <Image
                 src={category.image}
-                alt={category.title}
+                alt={category.alt}
                 width={500}
                 height={500}
                 className="h-full w-full bg-muted-foreground/10 object-cover object-center"
