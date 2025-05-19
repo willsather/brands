@@ -28,9 +28,8 @@ export default async function Home() {
         <Image
           src="https://assets.hermes.com/is/image/hermesedito/P_169_PE25_CROSS_NF_2?fit=wrap,0&wid=3840"
           alt="Hero background"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          width={3000}
+          height={3000}
           priority
           className="bg-muted-foreground/10"
         />
