@@ -1,61 +1,42 @@
 "use client";
+
 import { Check, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-import type { Lang, Locale } from "@/lib/types";
+import type { Lang } from "@/lib/types";
 import { Button } from "@brands/ui/components/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@brands/ui/components/dropdown-menu";
 
-interface LocaleSelectorProps {
-  currentLang: Lang;
-  currentLocale: Locale;
-}
-
 export default function LocaleSelector({
-  currentLang,
-  currentLocale,
-}: LocaleSelectorProps) {
+  lang,
+}: {
+  lang: Lang;
+}) {
   const router = useRouter();
 
   // Language options with display names
-  const languageOptions = [
-    { code: "en", name: "English" },
-    { code: "es", name: "Español" },
-  ];
-
-  // Locale options with display names and flags
-  const localeOptions = [
-    { code: "us", name: "United States", flag: "🇺🇸" },
-    { code: "mx", name: "Mexico", flag: "🇲🇽" },
-    { code: "ca", name: "Canada", flag: "🇨🇦" },
-    { code: "uk", name: "United Kingdom", flag: "🇬🇧" },
-    { code: "de", name: "Germany", flag: "🇩🇪" },
-    { code: "jp", name: "Japan", flag: "🇯🇵" },
+  const languageOptions: { code: Lang; name: string; flag?: string }[] = [
+    { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "es", name: "Español", flag: "🇪🇸" },
   ];
 
   // Get current language and locale display info
   const currentLanguage =
-    languageOptions.find((lang) => lang.code === currentLang) ||
-    languageOptions[0];
-  const currentCountry =
-    localeOptions.find((loc) => loc.code === currentLocale) || localeOptions[0];
+    languageOptions.find(({ code }) => code === lang) || languageOptions[0];
 
   // Handle selection change
-  const handleChange = (type: "language" | "locale", value: string) => {
+  const handleChange = (type: "language", value: string) => {
     // Update the selection
-    const newLang = type === "language" ? value : currentLang;
-    const newLocale = type === "locale" ? value : currentLocale;
+    const newLang = type === "language" ? value : lang;
 
     // Set cookies for future requests
     document.cookie = `NEXT_LANGUAGE=${newLang}; path=/; max-age=${60 * 60 * 24 * 365}`;
-    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=${60 * 60 * 24 * 365}`;
 
     // Refresh the current page to apply the new language/locale
     router.refresh();
@@ -68,11 +49,10 @@ export default function LocaleSelector({
           variant="ghost"
           size="sm"
           className="flex items-center space-x-1 text-muted-foreground hover:text-foreground"
-          aria-label={`${currentLanguage?.name || "Language"} / ${currentCountry?.flag || "🌍"} ${currentCountry?.name || "Country"}`}
+          aria-label={`${currentLanguage?.name || "Language"}`}
         >
           <div className="flex items-center justify-center space-x-2">
-            <span className="text-lg">{currentCountry?.flag || "🌍"}</span>
-            <span>{currentCountry?.name || "Country"}</span>
+            <span className="text-lg">{currentLanguage?.flag || "🌍"}</span>
             <ChevronDown className="h-4 w-4" />
           </div>
         </Button>
@@ -84,35 +64,14 @@ export default function LocaleSelector({
         </DropdownMenuLabel>
 
         <div className="mb-2 space-y-1">
-          {languageOptions.map((lang) => (
+          {languageOptions.map(({ code, name }) => (
             <DropdownMenuItem
-              key={lang.code}
+              key={code}
               className="flex cursor-pointer items-center justify-between"
-              onClick={() => handleChange("language", lang.code)}
+              onClick={() => handleChange("language", code)}
             >
-              <span>{lang.name}</span>
-              {currentLang === lang.code && <Check className="h-4 w-4" />}
-            </DropdownMenuItem>
-          ))}
-        </div>
-
-        <DropdownMenuSeparator />
-
-        <DropdownMenuLabel className="font-medium text-sm">
-          Country
-        </DropdownMenuLabel>
-        <div className="space-y-1">
-          {localeOptions.map((locale) => (
-            <DropdownMenuItem
-              key={locale.code}
-              className="flex cursor-pointer items-center justify-between"
-              onClick={() => handleChange("locale", locale.code)}
-            >
-              <div className="flex items-center">
-                <span className="mr-2">{locale.flag}</span>
-                <span>{locale.name}</span>
-              </div>
-              {currentLocale === locale.code && <Check className="h-4 w-4" />}
+              <span>{name}</span>
+              {lang === code && <Check className="h-4 w-4" />}
             </DropdownMenuItem>
           ))}
         </div>

@@ -1,5 +1,5 @@
 import { flags } from "@/lib/flags";
-import { LangSchema, LocaleSchema } from "@/lib/types";
+import { LangSchema } from "@/lib/types";
 import { precompute } from "flags/next";
 import { type NextRequest, NextResponse } from "next/server";
 
@@ -32,17 +32,6 @@ function getLanguage(request: NextRequest) {
   return "es";
 }
 
-function getLocale(request: NextRequest) {
-  // check if there's a cookie with locale preference
-  const cookieLocale = request.cookies.get("NEXT_LOCALE")?.value;
-  if (cookieLocale) {
-    return LocaleSchema.parse(cookieLocale);
-  }
-
-  // default to US
-  return "us";
-}
-
 function getPostalCode(request: NextRequest) {
   const postalCode = request.headers.get("x-vercel-ip-postal-code");
   return postalCode || "undefined";
@@ -60,16 +49,15 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // get the preferred language, locale, and postal code
+  // get the preferred language and postal code
   const language = getLanguage(request);
-  const locale = getLocale(request);
   const postalCode = getPostalCode(request);
 
   // compute our flags
   const flagged = await precompute(flags);
 
   const newUrl = new URL(request.nextUrl);
-  newUrl.pathname = `/${flagged}/${language}/${locale}/${postalCode}${pathname}`;
+  newUrl.pathname = `/${flagged}/${language}/${postalCode}${pathname}`;
 
   // rewrite the request (internal only, URL doesn't change for the user)
   return NextResponse.rewrite(newUrl);

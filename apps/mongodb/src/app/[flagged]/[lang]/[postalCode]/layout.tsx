@@ -1,11 +1,10 @@
-import Link from "next/link";
 import type React from "react";
 
 import { Footer } from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { PromotionalBanner } from "@/components/promotional-banner";
 import { flags } from "@/lib/flags";
-import { LangSchema, LocaleSchema } from "@/lib/types";
+import { LangSchema } from "@/lib/types";
 
 import { deserialize } from "flags/next";
 
@@ -25,16 +24,16 @@ export default async function LocaleLayout({
   const decisions = await deserialize(flags, flagged);
 
   const validLang = LangSchema.parse(lang);
-  const validLocale = LocaleSchema.parse(locale);
 
   return (
     <>
-      <PromotionalBanner text={decisions["banner-text-variation"]} />
+      {/*<PromotionalBanner text={decisions["banner-text-variation"]} />*/}
 
-      <div className="pt-12">
-        <Navbar lang={validLang} locale={validLocale} />
+      {/*<div className="pt-12">*/}
+      <div>
+        <Navbar lang={validLang} />
         {children}
-        <Footer lang={validLang} locale={validLocale} />
+        <Footer lang={validLang} />
       </div>
     </>
   );

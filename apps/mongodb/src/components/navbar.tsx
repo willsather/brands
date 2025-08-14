@@ -1,118 +1,73 @@
-"use client";
-
-import { Menu, ShoppingCart, X } from "lucide-react";
-import Image from "next/image";
+import { Search } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
 
-import dict from "@/lib/dict.json";
-import type { Lang, Locale } from "@/lib/types";
+import { Logo } from "@/components/logo";
+import type { Lang } from "@/lib/types";
+import { Button } from "@brands/ui/components/button";
 
-export default function Navbar({
-  lang,
-  locale,
-}: {
-  lang: Lang;
-  locale: Locale;
-}) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); //  added mobile menu state
+export default function Navbar({ lang }: { lang: Lang }) {
+  const navigationItems = [
+    { name: "Products", href: "/#" },
+    { name: "Resources", href: "/#" },
+    { name: "Solutions", href: "/#" },
+    { name: "Company", href: "/#" },
+    { name: "Pricing", href: "/#" },
+  ];
 
   return (
-    <nav className="sticky top-0 z-10 border-gray-200 border-b bg-white">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/*  Desktop navigation - hidden on mobile */}
-          <div className="hidden w-1/3 gap-4 md:flex">
-            {dict[lang].navbar.items.map((item, i) => (
+    <nav className="border-gray-200 border-b bg-white">
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center">
+              <Logo className="fill-[#001E2B]" />
+            </Link>
+          </div>
+
+          <div className="hidden items-center space-x-8 md:flex">
+            {navigationItems.map((item) => (
               <Link
                 key={item.name}
-                href={item.route}
-                className="tracking-tight transition-colors hover:text-gray-600"
+                href={item.href}
+                className="flex items-center font-medium text-gray-900 text-sm transition-colors duration-200 hover:text-gray-600"
               >
                 {item.name}
               </Link>
             ))}
           </div>
 
-          {/*  Mobile hamburger menu - visible only on mobile */}
-          <div className="flex items-center md:hidden">
-            <button
-              type="button"
-              onClick={() => setIsMobileMenuOpen(true)}
-              className="p-2 text-gray-600 transition-colors hover:text-gray-900"
-              aria-label="Open menu"
-            >
-              <Menu className="h-6 w-6" />
-            </button>
-          </div>
+          <div className="flex items-center space-x-4">
+            {/* Search Icon */}
+            <Button className="p-2 text-gray-600 transition-colors hover:text-gray-900">
+              <Search className="h-5 w-5" />
+            </Button>
 
-          {/*  Logo - adjusted width for mobile */}
-          <div className="flex justify-center md:w-1/3">
+            {/* Support Link */}
             <Link
-              href="/"
-              className="font-bold font-serif text-3xl tracking-tight"
+              href="/support"
+              className="font-medium text-gray-900 text-sm transition-colors duration-200 hover:text-gray-600"
             >
-              <Image
-                src="https://8hvqnvqjkkn6ntus.public.blob.vercel-storage.com/img/bose.svg"
-                alt="Bose"
-                width={120}
-                height={32}
-              />
+              Support
             </Link>
-          </div>
 
-          {/*  Cart */}
-          <div className="flex justify-end md:w-1/3">
+            {/* Sign In Link */}
             <Link
-              href="/cart"
-              className="relative p-2 text-gray-600 transition-colors hover:text-gray-900"
+              href="/signin"
+              className="font-medium text-gray-900 text-sm transition-colors duration-200 hover:text-gray-600"
             >
-              <ShoppingCart className="size-5" />
+              Sign In
+            </Link>
+
+            {/* Get Started Button */}
+            <Link
+              href="/get-started"
+              className="rounded-md bg-green-500 px-4 py-2 font-medium text-sm text-white transition-colors duration-200 hover:bg-green-600"
+            >
+              Get Started
             </Link>
           </div>
         </div>
       </div>
-
-      {/*  Mobile menu overlay */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 md:hidden">
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 bg-black bg-opacity-5 transition-opacity"
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
-
-          {/* Menu panel */}
-          <div className="fixed top-0 left-0 h-full w-64 transform bg-white shadow-xl transition-transform">
-            <div className="flex items-center justify-between border-b p-4">
-              <h2 className="font-semibold text-lg">Menu</h2>
-              <button
-                type="button"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 text-gray-600 transition-colors hover:text-gray-900"
-                aria-label="Close menu"
-              >
-                <X className="h-6 w-6" />
-              </button>
-            </div>
-
-            <div className="p-4">
-              <div className="space-y-4">
-                {dict[lang].navbar.items.map((item, i) => (
-                  <Link
-                    key={item.name}
-                    href={item.route}
-                    className="block py-2 text-lg tracking-tight transition-colors hover:text-gray-600"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </nav>
   );
 }

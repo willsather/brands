@@ -76,9 +76,14 @@ export const heroVariation = flag<string>({
     },
   ],
   decide() {
-    const variations = ["back-to-school", "ultra-open-earbuds", "bose-heritage"] as const;
+    const variations = [
+      "back-to-school",
+      "ultra-open-earbuds",
+      "bose-heritage",
+    ] as const;
     return (
-      variations[Math.floor(Math.random() * variations.length)] ?? "back-to-school"
+      variations[Math.floor(Math.random() * variations.length)] ??
+      "back-to-school"
     );
   },
 });

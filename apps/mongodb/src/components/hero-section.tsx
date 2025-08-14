@@ -1,9 +1,9 @@
-import { ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-import { Button } from "@brands/ui/components/button";
 import dict from "@/lib/dict.json";
 import type { Lang } from "@/lib/types";
+import { Button } from "@brands/ui/components/button";
 
 export default function HeroSection({
   lang,
@@ -16,73 +16,62 @@ export default function HeroSection({
   showSecondaryButton?: boolean;
   variation?: string;
 }) {
-  const content = dict[lang].hero[variation as keyof typeof dict.en.hero] || dict[lang].hero["back-to-school"];
-
-  const getImageSrc = () => {
-    switch (variation) {
-      case "ultra-open-earbuds":
-        return "https://8hvqnvqjkkn6ntus.public.blob.vercel-storage.com/img/hero/hero-2.avif";
-      case "bose-heritage":
-        return "https://8hvqnvqjkkn6ntus.public.blob.vercel-storage.com/img/hero/hero-3.webp";
-      default:
-        return "https://8hvqnvqjkkn6ntus.public.blob.vercel-storage.com/img/hero/hero.avif";
-    }
-  };
+  const content =
+    dict[lang].hero[variation as keyof typeof dict.en.hero] ||
+    dict[lang].hero["back-to-school"];
 
   return (
     <section className="relative h-[90vh] w-full overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-center bg-cover bg-no-repeat">
-        <Image
-          src={getImageSrc()}
-          alt="Back-to-school Sale"
-          width={1920}
-          height={1080}
-          className="h-full w-full object-cover"
-        />
-      </div>
-
-      {/* Bottom left */}
-      <div className="relative flex h-full items-end">
-        <div className="container px-6 pb-12 md:pb-16">
-          <div className="max-w-2xl">
-            {/* Small label */}
-            <p className="mb-4 font-medium text-sm text-white/90 uppercase tracking-wide">
-              {content.label}
-            </p>
-
-            {/* Main headline */}
-            <h1 className="mb-6 font-bold font-serif text-5xl text-white leading-tight">
-              {content.title}
-            </h1>
-
-            {/* Subtitle */}
-            <p className="mb-8 max-w-xl text-white/90 leading-relaxed md:text-lg">
-              {content.subtitle}
-            </p>
-
-            {/* Action buttons */}
-            <div className="flex flex-col gap-4 sm:flex-row">
-              {showPrimaryButton && (
-                <Button
-                  size="lg"
-                  className="bg-white px-8 font-semibold text-black hover:bg-white/90"
-                >
-                  {content.primaryButton}
-                </Button>
-              )}
-
-              {showSecondaryButton && (
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  className="group font-medium text-white hover:bg-transparent hover:text-white hover:underline"
-                >
-                  {content.secondaryButton}
-                  <ChevronRight className="ml-2 size-5" />
-                </Button>
-              )}
+      <div className="container mx-auto px-6 py-16">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="space-y-8">
+            <div className="space-y-2">
+              <div className="font-medium text-green-600 text-sm uppercase tracking-wide">
+                MONGODB ATLAS
+              </div>
             </div>
+
+            <div className="space-y-6">
+              <h1 className="font-bold text-5xl text-gray-900 leading-tight lg:text-6xl">
+                Loved by developers.{" "}
+                <span className="block">Built for modern</span>
+                <span className="block">applications.</span>
+              </h1>
+
+              <p className="max-w-lg text-gray-600 text-lg leading-relaxed">
+                You don't need a separate database to handle transactions, rich
+                search, or generative AI. The world's most popular modern
+                database adapts and scales to handle all your application
+                requirements.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <Button
+                size="lg"
+                className="bg-green-500 px-8 py-3 font-medium text-base text-white hover:bg-green-600"
+              >
+                Get Started
+              </Button>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="group p-0 font-medium text-base text-gray-700 hover:text-gray-900"
+              >
+                Learn more
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
+          </div>
+
+          <div className="relative">
+            <Image
+              src="https://zlbmkgaohavraaed.public.blob.vercel-storage.com/hero/hero-code.svg"
+              alt="MongoDB Atlas vector search code"
+              width={600}
+              height={400}
+              className="h-auto w-full rounded"
+            />
           </div>
         </div>
       </div>
