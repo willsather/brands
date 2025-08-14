@@ -17,9 +17,7 @@ export default function HeroSection({
   showSecondaryButton?: boolean;
   variation?: string;
 }) {
-  const content =
-    dict[lang].hero[variation as keyof typeof dict.en.hero] ||
-    dict[lang].hero["back-to-school"];
+  const t = dict[lang];
 
   return (
     <section className="relative h-[90vh] w-full overflow-hidden">
@@ -28,34 +26,31 @@ export default function HeroSection({
           <div className="space-y-8">
             <div className="space-y-2">
               <div className="font-medium text-green-600 text-sm uppercase tracking-wide">
-                MONGODB ATLAS
+                {t.hero.atlas}
               </div>
             </div>
 
             <div className="space-y-6">
               <h1 className="text-5xl text-gray-900 leading-tight lg:text-6xl">
-                Loved by developers.{" "}
-                <span className="block">Built for modern</span>
-                <span className="block">applications.</span>
+                {t.hero.title}{" "}
+                <span className="block">{t.hero.titleLine2}</span>
+                <span className="block">{t.hero.titleLine3}</span>
               </h1>
 
               <p className="max-w-lg text-gray-600 text-lg leading-relaxed">
-                You don't need a separate database to handle transactions, rich
-                search, or generative AI. The world's most popular modern
-                database adapts and scales to handle all your application
-                requirements.
+                {t.hero.description}
               </p>
             </div>
 
             <div className="flex items-center gap-4">
-              <GetStartedButton />
+              <GetStartedButton lang={lang} />
 
               <Button
                 variant="ghost"
                 size="lg"
-                className="flex group p-0 font-medium text-base text-gray-700 hover:text-gray-900"
+                className="group flex p-0 font-medium text-base text-gray-700 hover:text-gray-900"
               >
-                Learn more
+                {t.hero.learnMore}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>

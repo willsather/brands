@@ -2,9 +2,17 @@
 
 import { useEffect, useState } from "react";
 
+import dict from "@/lib/dict.json";
+import type { Lang } from "@/lib/types";
+
 export function PromotionalBanner({
   text,
-}: { text: "mongo-8.0" | "voyage" | "conference" | "mcp-server" }) {
+  lang = "en",
+}: {
+  text: "mongo-8.0" | "voyage" | "conference" | "mcp-server";
+  lang?: Lang;
+}) {
+  const t = dict[lang];
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -19,20 +27,20 @@ export function PromotionalBanner({
 
   const variations = {
     conference: {
-      text: "Join us Sept 17 at .local NYC! Use code WEB50 to save 50% on top of Early Bird tickets.",
-      cta: "MongoDB Event",
+      text: t.promotionalBanner.conference.text,
+      cta: t.promotionalBanner.conference.cta,
     },
     "mcp-server": {
-      text: "Explore Now: MongoDB MCP Server for AI-Powered Development (Public Preview)",
-      cta: "Announcement",
+      text: t.promotionalBanner.mcpServer.text,
+      cta: t.promotionalBanner.mcpServer.cta,
     },
     "mongo-8.0": {
-      text: "MongoDB 8.0: Experience unmatched speed and performance.",
-      cta: "New",
+      text: t.promotionalBanner.mongo8.text,
+      cta: t.promotionalBanner.mongo8.cta,
     },
     voyage: {
-      text: "Voyage AI joins MongoDB to power more accurate and trustworthy AI applications on Atlas.",
-      cta: "Announcement",
+      text: t.promotionalBanner.voyage.text,
+      cta: t.promotionalBanner.voyage.cta,
     },
   };
 

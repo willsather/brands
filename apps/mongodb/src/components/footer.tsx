@@ -32,46 +32,48 @@ export function Footer({
 
           {/* About */}
           <div>
-            <h3 className="mb-6 font-semibold text-white">About</h3>
+            <h3 className="mb-6 font-semibold text-white">
+              {t.footer.about.title}
+            </h3>
             <ul className="space-y-4 text-gray-300 text-sm">
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Careers
+                  {t.footer.about.careers}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Investor Relations
+                  {t.footer.about.investorRelations}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Legal
+                  {t.footer.about.legal}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Privacy Policy
+                  {t.footer.about.privacyPolicy}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  GitHub
+                  {t.footer.about.github}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Security Information
+                  {t.footer.about.securityInfo}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Trust Center
+                  {t.footer.about.trustCenter}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Connect with Us
+                  {t.footer.about.connectWithUs}
                 </a>
               </li>
             </ul>
@@ -79,26 +81,28 @@ export function Footer({
 
           {/* Support */}
           <div>
-            <h3 className="mb-6 font-semibold text-white">Support</h3>
+            <h3 className="mb-6 font-semibold text-white">
+              {t.footer.support.title}
+            </h3>
             <ul className="space-y-4 text-gray-300 text-sm">
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Contact Us
+                  {t.footer.support.contactUs}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Customer Portal
+                  {t.footer.support.customerPortal}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Atlas Status
+                  {t.footer.support.atlasStatus}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Customer Support
+                  {t.footer.support.customerSupport}
                 </a>
               </li>
             </ul>
@@ -107,22 +111,22 @@ export function Footer({
           {/* Deployment Options */}
           <div>
             <h3 className="mb-6 font-semibold text-white">
-              Deployment Options
+              {t.footer.deploymentOptions.title}
             </h3>
             <ul className="space-y-4 text-gray-300 text-sm">
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  MongoDB Atlas
+                  {t.footer.deploymentOptions.mongodbAtlas}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Enterprise Advanced
+                  {t.footer.deploymentOptions.enterpriseAdvanced}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Community Edition
+                  {t.footer.deploymentOptions.communityEdition}
                 </a>
               </li>
             </ul>
@@ -130,41 +134,43 @@ export function Footer({
 
           {/* Data Basics */}
           <div>
-            <h3 className="mb-6 font-semibold text-white">Data Basics</h3>
+            <h3 className="mb-6 font-semibold text-white">
+              {t.footer.dataBasics.title}
+            </h3>
             <ul className="space-y-4 text-gray-300 text-sm">
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Vector Databases
+                  {t.footer.dataBasics.vectorDatabases}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  NoSQL Databases
+                  {t.footer.dataBasics.nosqlDatabases}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  Document Databases
+                  {t.footer.dataBasics.documentDatabases}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  RAG Database
+                  {t.footer.dataBasics.ragDatabase}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  ACID Transactions
+                  {t.footer.dataBasics.acidTransactions}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  MERN Stack
+                  {t.footer.dataBasics.mernStack}
                 </a>
               </li>
               <li>
                 <a href="/#" className="transition-colors hover:text-white">
-                  MEAN Stack
+                  {t.footer.dataBasics.meanStack}
                 </a>
               </li>
             </ul>
@@ -173,7 +179,7 @@ export function Footer({
 
         {/* Copyright */}
         <div className="mt-16 border-gray-700 border-t pt-8">
-          <p className="text-gray-400 text-sm">© 2025 MongoDB, Inc.</p>
+          <p className="text-gray-400 text-sm">{t.footer.copyright}</p>
         </div>
       </div>
     </footer>

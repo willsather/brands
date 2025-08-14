@@ -3,17 +3,13 @@ import Link from "next/link";
 
 import { GetStartedButton } from "@/components/get-started-button";
 import { Logo } from "@/components/logo";
+import dict from "@/lib/dict.json";
 import type { Lang } from "@/lib/types";
 import { Button } from "@brands/ui/components/button";
 
 export default function Navbar({ lang }: { lang: Lang }) {
-  const navigationItems = [
-    { name: "Products", href: "/#" },
-    { name: "Resources", href: "/#" },
-    { name: "Solutions", href: "/#" },
-    { name: "Company", href: "/#" },
-    { name: "Pricing", href: "/#" },
-  ];
+  const t = dict[lang];
+  const navigationItems = t.navbar.items;
 
   return (
     <nav className="border-gray-200 border-b bg-white">
@@ -29,7 +25,7 @@ export default function Navbar({ lang }: { lang: Lang }) {
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
+                href={item.route}
                 className="flex items-center font-medium text-gray-900 text-sm transition-colors duration-200 hover:text-gray-600"
               >
                 {item.name}
@@ -48,7 +44,7 @@ export default function Navbar({ lang }: { lang: Lang }) {
               href="/support"
               className="font-medium text-gray-900 text-sm transition-colors duration-200 hover:text-gray-600"
             >
-              Support
+              {t.navbar.support}
             </Link>
 
             {/* Sign In Link */}
@@ -56,10 +52,10 @@ export default function Navbar({ lang }: { lang: Lang }) {
               href="/signin"
               className="font-medium text-gray-900 text-sm transition-colors duration-200 hover:text-gray-600"
             >
-              Sign In
+              {t.navbar.signIn}
             </Link>
 
-            <GetStartedButton />
+            <GetStartedButton lang={lang} />
           </div>
         </div>
       </div>

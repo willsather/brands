@@ -2,212 +2,164 @@
   "en": {
     "navbar": {
       "items": [
-        { "name": "Shop", "route": "/products" },
-        { "name": "Explore", "route": "/#explore" },
-        { "name": "Support", "route": "/" },
-        { "name": "Sale", "route": "/products" }
-      ]
-    },
-    "cart": {
-      "title": "Your Cart",
-      "continueShopping": "Continue shopping",
-      "empty": {
-        "title": "Your cart is empty",
-        "description": "Add some products to get started",
-        "shopNow": "Shop now"
-      },
-      "orderSummary": {
-        "title": "Order Summary",
-        "items": "Items",
-        "shipping": "Shipping",
-        "shippingFree": "Free",
-        "total": "Total",
-        "checkout": "Proceed to Checkout",
-        "taxesNote": "Taxes calculated at checkout"
-      },
-      "product": {
-        "color": "Color",
-        "addToCart": "Add to Cart",
-        "adding": "Adding..."
-      }
-    },
-    "footer": {
-      "newsletter": {
-        "title": "Being first has its perks",
-        "description": "Sign up to receive Bose emails and communications for exclusive benefits, promotions and new product information.",
-        "emailPlaceholder": "Email address",
-        "signUp": "SIGN UP"
-      },
-      "breadcrumb": "Home /",
-      "customerCare": {
-        "title": "Customer Care",
-        "troubleshooting": "Troubleshooting",
-        "repairReplacement": "Repair & Replacement",
-        "orderTracking": "Order Tracking",
-        "signInJoin": "Sign In or Join My Bose",
-        "perks": "My Bose Perks",
-        "register": "Register Your Product",
-        "boseCare": "BoseCare",
-        "contactUs": "Contact Us"
-      },
-      "company": {
-        "title": "Our company",
-        "aboutUs": "About Us",
-        "findStore": "Find a Store",
-        "esg": "ESG",
-        "careers": "Careers",
-        "pressRoom": "Press Room",
-        "stories": "Stories",
-        "partnerships": "Partnerships & Licensing",
-        "worldwide": "Bose Worldwide"
-      },
-      "offers": {
-        "title": "Offers",
-        "giftCards": "Gift Cards",
-        "idMeProgram": "ID.me Group Program",
-        "corporateGifting": "Corporate Gifting",
-        "partnerProgram": "Partner & Employee Program",
-        "refurbished": "Certified Refurbished",
-        "tradeUp": "Trade Up"
-      },
-      "additionalLinks": {
-        "title": "Additional Links",
-        "automotive": "Automotive",
-        "resellerPortal": "Reseller Portal"
-      },
-      "apps": {
-        "bose": "Bose app",
-        "connect": "Bose Connect app",
-        "qce": "Bose QCE App"
-      }
+        { "name": "Products", "route": "/#" },
+        { "name": "Resources", "route": "/#" },
+        { "name": "Solutions", "route": "/#" },
+        { "name": "Company", "route": "/#" },
+        { "name": "Pricing", "route": "/#" }
+      ],
+      "support": "Support",
+      "signIn": "Sign In"
     },
     "hero": {
-      "back-to-school": {
-        "label": "BACK-TO-SCHOOL SALE",
-        "title": "Study hard. Play loud. Save big.",
-        "subtitle": "Start classes on a high note with deals on earbuds, speakers, and more.",
-        "primaryButton": "SHOP SALE",
-        "secondaryButton": "VIEW GIFT GUIDE"
+      "atlas": "MONGODB ATLAS",
+      "title": "Loved by developers.",
+      "titleLine2": "Built for modern",
+      "titleLine3": "applications.",
+      "description": "You don't need a separate database to handle transactions, rich search, or generative AI. The world's most popular modern database adapts and scales to handle all your application requirements.",
+      "learnMore": "Learn more"
+    },
+    "buttons": {
+      "getStarted": "Get Started"
+    },
+    "footer": {
+      "about": {
+        "title": "About",
+        "careers": "Careers",
+        "investorRelations": "Investor Relations",
+        "legal": "Legal",
+        "privacyPolicy": "Privacy Policy",
+        "github": "GitHub",
+        "securityInfo": "Security Information",
+        "trustCenter": "Trust Center",
+        "connectWithUs": "Connect with Us"
       },
-      "ultra-open-earbuds": {
-        "label": "ULTRA OPEN EARBUDS",
-        "title": "Sound, meet style",
-        "subtitle": "Shop and save $70 on fresh shades of Ultra Open Earbuds.",
-        "primaryButton": "SHOP SALE",
-        "secondaryButton": "VIEW GIFT GUIDE"
+      "support": {
+        "title": "Support",
+        "contactUs": "Contact Us",
+        "customerPortal": "Customer Portal",
+        "atlasStatus": "Atlas Status",
+        "customerSupport": "Customer Support"
       },
-      "bose-heritage": {
-        "label": "BOSE HERITAGE",
-        "title": "Sound is power",
-        "subtitle": "Discover our work on the power of sound through the decades.",
-        "primaryButton": "SHOP SALE",
-        "secondaryButton": "VIEW GIFT GUIDE"
+      "deploymentOptions": {
+        "title": "Deployment Options",
+        "mongodbAtlas": "MongoDB Atlas",
+        "enterpriseAdvanced": "Enterprise Advanced",
+        "communityEdition": "Community Edition"
+      },
+      "dataBasics": {
+        "title": "Data Basics",
+        "vectorDatabases": "Vector Databases",
+        "nosqlDatabases": "NoSQL Databases",
+        "documentDatabases": "Document Databases",
+        "ragDatabase": "RAG Database",
+        "acidTransactions": "ACID Transactions",
+        "mernStack": "MERN Stack",
+        "meanStack": "MEAN Stack"
+      },
+      "copyright": "© 2025 MongoDB, Inc."
+    },
+    "localeSelector": {
+      "language": "Language"
+    },
+    "promotionalBanner": {
+      "conference": {
+        "text": "Join us Sept 17 at .local NYC! Use code WEB50 to save 50% on top of Early Bird tickets.",
+        "cta": "MongoDB Event"
+      },
+      "mcpServer": {
+        "text": "Explore Now: MongoDB MCP Server for AI-Powered Development (Public Preview)",
+        "cta": "Announcement"
+      },
+      "mongo8": {
+        "text": "MongoDB 8.0: Experience unmatched speed and performance.",
+        "cta": "New"
+      },
+      "voyage": {
+        "text": "Voyage AI joins MongoDB to power more accurate and trustworthy AI applications on Atlas.",
+        "cta": "Announcement"
       }
     }
   },
   "es": {
     "navbar": {
       "items": [
-        { "name": "Comercio", "route": "/products" },
-        { "name": "Explorar", "route": "/#explore" },
-        { "name": "Apoyo", "route": "/" },
-        { "name": "Venta", "route": "/products" }
-      ]
-    },
-    "cart": {
-      "title": "Tu carrito",
-      "continueShopping": "Continuar comprando",
-      "empty": {
-        "title": "Tu carrito está vacío",
-        "description": "Añade algunos productos para empezar",
-        "shopNow": "Comprar ahora"
-      },
-      "orderSummary": {
-        "title": "Resumen del Pedido",
-        "items": "Artículos",
-        "shipping": "Envío",
-        "shippingFree": "Gratis",
-        "total": "Total",
-        "checkout": "Proceder al Pago",
-        "taxesNote": "Impuestos calculados al finalizar la compra"
-      },
-      "product": {
-        "color": "Color",
-        "addToCart": "Añadir al Carrito",
-        "adding": "Añadiendo..."
-      }
-    },
-    "footer": {
-      "newsletter": {
-        "title": "Ser el primero tiene sus ventajas",
-        "description": "Regístrate para recibir correos electrónicos y comunicaciones de Bose para beneficios exclusivos, promociones e información de nuevos productos.",
-        "emailPlaceholder": "Correo electrónico",
-        "signUp": "REGISTRARSE"
-      },
-      "breadcrumb": "Inicio /",
-      "customerCare": {
-        "title": "Atención al Cliente",
-        "troubleshooting": "Solución de Problemas",
-        "repairReplacement": "Reparación y Reemplazo",
-        "orderTracking": "Seguimiento de Pedidos",
-        "signInJoin": "Iniciar Sesión o Únete a My Bose",
-        "perks": "Beneficios My Bose",
-        "register": "Registra tu Producto",
-        "boseCare": "BoseCare",
-        "contactUs": "Contáctanos"
-      },
-      "company": {
-        "title": "Nuestra empresa",
-        "aboutUs": "Acerca de Nosotros",
-        "findStore": "Encuentra una Tienda",
-        "esg": "ESG",
-        "careers": "Carreras",
-        "pressRoom": "Sala de Prensa",
-        "stories": "Historias",
-        "partnerships": "Asociaciones y Licencias",
-        "worldwide": "Bose en el Mundo"
-      },
-      "offers": {
-        "title": "Ofertas",
-        "giftCards": "Tarjetas de Regalo",
-        "idMeProgram": "Programa Grupal ID.me",
-        "corporateGifting": "Regalos Corporativos",
-        "partnerProgram": "Programa de Socios y Empleados",
-        "refurbished": "Reacondicionados Certificados",
-        "tradeUp": "Intercambio"
-      },
-      "additionalLinks": {
-        "title": "Enlaces Adicionales",
-        "automotive": "Automotriz",
-        "resellerPortal": "Portal de Revendedores"
-      },
-      "apps": {
-        "bose": "Aplicación Bose",
-        "connect": "Aplicación Bose Connect",
-        "qce": "Aplicación Bose QCE"
-      }
+        { "name": "Productos", "route": "/#" },
+        { "name": "Recursos", "route": "/#" },
+        { "name": "Soluciones", "route": "/#" },
+        { "name": "Empresa", "route": "/#" },
+        { "name": "Precios", "route": "/#" }
+      ],
+      "support": "Soporte",
+      "signIn": "Iniciar Sesión"
     },
     "hero": {
-      "back-to-school": {
-        "label": "OFERTA REGRESO A CLASES",
-        "title": "Estudia duro. Suena fuerte. Ahorra mucho.",
-        "subtitle": "Comienza las clases con buena nota con ofertas en auriculares, altavoces y más.",
-        "primaryButton": "COMPRAR OFERTA",
-        "secondaryButton": "VER GUÍA DE REGALOS"
+      "atlas": "MONGODB ATLAS",
+      "title": "Amado por desarrolladores.",
+      "titleLine2": "Construido para aplicaciones",
+      "titleLine3": "modernas.",
+      "description": "No necesitas una base de datos separada para manejar transacciones, búsquedas avanzadas o IA generativa. La base de datos moderna más popular del mundo se adapta y escala para manejar todos los requisitos de tu aplicación.",
+      "learnMore": "Aprende más"
+    },
+    "buttons": {
+      "getStarted": "Comenzar"
+    },
+    "footer": {
+      "about": {
+        "title": "Acerca de",
+        "careers": "Carreras",
+        "investorRelations": "Relaciones con Inversores",
+        "legal": "Legal",
+        "privacyPolicy": "Política de Privacidad",
+        "github": "GitHub",
+        "securityInfo": "Información de Seguridad",
+        "trustCenter": "Centro de Confianza",
+        "connectWithUs": "Conecta con Nosotros"
       },
-      "ultra-open-earbuds": {
-        "label": "ULTRA OPEN EARBUDS",
-        "title": "El sonido se encuentra con el estilo",
-        "subtitle": "Compra y ahorra $70 en tonos frescos de Ultra Open Earbuds.",
-        "primaryButton": "COMPRAR OFERTA",
-        "secondaryButton": "VER GUÍA DE REGALOS"
+      "support": {
+        "title": "Soporte",
+        "contactUs": "Contáctanos",
+        "customerPortal": "Portal del Cliente",
+        "atlasStatus": "Estado de Atlas",
+        "customerSupport": "Atención al Cliente"
       },
-      "bose-heritage": {
-        "label": "HERENCIA BOSE",
-        "title": "El sonido es poder",
-        "subtitle": "Descubre nuestro trabajo sobre el poder del sonido a través de las décadas.",
-        "primaryButton": "COMPRAR OFERTA",
-        "secondaryButton": "VER GUÍA DE REGALOS"
+      "deploymentOptions": {
+        "title": "Opciones de Implementación",
+        "mongodbAtlas": "MongoDB Atlas",
+        "enterpriseAdvanced": "Enterprise Avanzado",
+        "communityEdition": "Edición Comunitaria"
+      },
+      "dataBasics": {
+        "title": "Conceptos Básicos de Datos",
+        "vectorDatabases": "Bases de Datos Vectoriales",
+        "nosqlDatabases": "Bases de Datos NoSQL",
+        "documentDatabases": "Bases de Datos de Documentos",
+        "ragDatabase": "Base de Datos RAG",
+        "acidTransactions": "Transacciones ACID",
+        "mernStack": "Stack MERN",
+        "meanStack": "Stack MEAN"
+      },
+      "copyright": "© 2025 MongoDB, Inc."
+    },
+    "localeSelector": {
+      "language": "Idioma"
+    },
+    "promotionalBanner": {
+      "conference": {
+        "text": "¡Únete el 17 de septiembre en .local NYC! Usa el código WEB50 para ahorrar 50% además del descuento por reserva anticipada.",
+        "cta": "Evento MongoDB"
+      },
+      "mcpServer": {
+        "text": "Explora Ahora: Servidor MCP de MongoDB para Desarrollo Potenciado por IA (Vista Previa Pública)",
+        "cta": "Anuncio"
+      },
+      "mongo8": {
+        "text": "MongoDB 8.0: Experimenta velocidad y rendimiento incomparables.",
+        "cta": "Nuevo"
+      },
+      "voyage": {
+        "text": "Voyage AI se une a MongoDB para potenciar aplicaciones de IA más precisas y confiables en Atlas.",
+        "cta": "Anuncio"
       }
     }
   }

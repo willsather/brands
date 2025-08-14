@@ -27,7 +27,10 @@ export default async function LocaleLayout({
 
   return (
     <>
-      <PromotionalBanner text={decisions["banner-text-variation"]} />
+      <PromotionalBanner
+        text={decisions["banner-text-variation"]}
+        lang={validLang}
+      />
 
       <div className="pt-12">
         <Navbar lang={validLang} />

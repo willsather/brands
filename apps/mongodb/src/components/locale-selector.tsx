@@ -3,6 +3,7 @@
 import { Check, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 
+import dict from "@/lib/dict.json";
 import type { Lang } from "@/lib/types";
 import { Button } from "@brands/ui/components/button";
 import {
@@ -19,6 +20,7 @@ export default function LocaleSelector({
   lang: Lang;
 }) {
   const router = useRouter();
+  const t = dict[lang];
 
   // Language options with display names
   const languageOptions: { code: Lang; name: string; flag?: string }[] = [
@@ -60,7 +62,7 @@ export default function LocaleSelector({
 
       <DropdownMenuContent className="w-64 p-2" align="start">
         <DropdownMenuLabel className="font-medium text-sm">
-          Language
+          {t.localeSelector.language}
         </DropdownMenuLabel>
 
         <div className="mb-2 space-y-1">
