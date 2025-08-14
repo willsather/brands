@@ -1,0 +1,49 @@
+import ProductDetail from "@/components/product-detail";
+import { flags } from "@/lib/flags";
+import { getProducts } from "@/lib/product";
+import { LangSchema, LocaleSchema } from "@/lib/types";
+import { deserialize } from "flags/next";
+import { notFound } from "next/navigation";
+
+export function generateStaticParams() {
+  return [];
+}
+
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<{
+    flagged: string;
+    lang: string;
+    locale: string;
+    postalCode: string;
+    slug: string;
+  }>;
+}) {
+  const { flagged, lang, locale, postalCode, slug } = await params;
+  const products = await getProducts();
+  const decisions = await deserialize(flags, flagged);
+
+  const validLang = LangSchema.parse(lang);
+  const validLocale = LocaleSchema.parse(locale);
+
+  const product = products.find((p) => p.slug === slug);
+
+  if (!product) {
+    notFound();
+  }
+
+  return (
+    <main className="container mx-auto px-4 py-8">
+      <div className="space-y-8">
+        <ProductDetail
+          product={product}
+          lang={validLang}
+          locale={validLocale}
+          postalCode={postalCode}
+          showDeliveryText={decisions["show-delivery-text"]}
+        />
+      </div>
+    </main>
+  );
+}
