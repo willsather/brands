@@ -20,17 +20,16 @@ export default async function LocaleLayout({
     postalCode: string;
   }>;
 }) {
-  const { flagged, lang, locale } = await params;
+  const { flagged, lang } = await params;
   const decisions = await deserialize(flags, flagged);
 
   const validLang = LangSchema.parse(lang);
 
   return (
     <>
-      {/*<PromotionalBanner text={decisions["banner-text-variation"]} />*/}
+      <PromotionalBanner text={decisions["banner-text-variation"]} />
 
-      {/*<div className="pt-12">*/}
-      <div>
+      <div className="pt-12">
         <Navbar lang={validLang} />
         {children}
         <Footer lang={validLang} />

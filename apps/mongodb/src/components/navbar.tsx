@@ -1,6 +1,7 @@
 import { Search } from "lucide-react";
 import Link from "next/link";
 
+import { GetStartedButton } from "@/components/get-started-button";
 import { Logo } from "@/components/logo";
 import type { Lang } from "@/lib/types";
 import { Button } from "@brands/ui/components/button";
@@ -58,13 +59,7 @@ export default function Navbar({ lang }: { lang: Lang }) {
               Sign In
             </Link>
 
-            {/* Get Started Button */}
-            <Link
-              href="/get-started"
-              className="rounded-md bg-green-500 px-4 py-2 font-medium text-sm text-white transition-colors duration-200 hover:bg-green-600"
-            >
-              Get Started
-            </Link>
+            <GetStartedButton />
           </div>
         </div>
       </div>

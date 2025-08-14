@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
+import { GetStartedButton } from "@/components/get-started-button";
 import dict from "@/lib/dict.json";
 import type { Lang } from "@/lib/types";
 import { Button } from "@brands/ui/components/button";
@@ -32,7 +33,7 @@ export default function HeroSection({
             </div>
 
             <div className="space-y-6">
-              <h1 className="font-bold text-5xl text-gray-900 leading-tight lg:text-6xl">
+              <h1 className="text-5xl text-gray-900 leading-tight lg:text-6xl">
                 Loved by developers.{" "}
                 <span className="block">Built for modern</span>
                 <span className="block">applications.</span>
@@ -47,16 +48,12 @@ export default function HeroSection({
             </div>
 
             <div className="flex items-center gap-4">
-              <Button
-                size="lg"
-                className="bg-green-500 px-8 py-3 font-medium text-base text-white hover:bg-green-600"
-              >
-                Get Started
-              </Button>
+              <GetStartedButton />
+
               <Button
                 variant="ghost"
                 size="lg"
-                className="group p-0 font-medium text-base text-gray-700 hover:text-gray-900"
+                className="flex group p-0 font-medium text-base text-gray-700 hover:text-gray-900"
               >
                 Learn more
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

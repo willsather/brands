@@ -21,38 +21,35 @@ export const showHeroSecondaryButton = flag<boolean>({
 export const promoBannerFlag = flag<string>({
   key: "banner-text-variation",
   description: "change the promo banner text",
-  defaultValue:
-    "Purchase an aviation headset and get free Black QuietComfort Earbuds. Ends 8/30",
+  defaultValue: "conference",
   options: [
     {
-      value:
-        "Purchase an aviation headset and get free Black QuietComfort Earbuds. Ends 8/30",
-      label: "Aviation Headset + QuietComfort",
+      value: "conference",
+      label: "NYC Conference",
     },
     {
-      value: "Save up to 40% on premium Bose speakers. Limited time offer!",
-      label: "Speakers Sale",
+      value: "mcp-server",
+      label: "MCP Server Preview",
     },
     {
-      value: "Get the best wireless earbuds with noise cancellation. Shop now!",
-      label: "Earbuds Special",
+      value: "mongo-8.0",
+      label: "MongoDB 8.0 Release",
     },
     {
-      value: "Experience ultimate sound with our flagship headphones. 25% off!",
-      label: "Headphones Deal",
+      value: "voyage",
+      label: "Voyage Announcement",
     },
   ],
   decide() {
     const variations = [
-      "Purchase an aviation headset and get free Black QuietComfort Earbuds. Ends 8/30",
-      "Save up to 40% on premium Bose speakers. Limited time offer!",
-      "Get the best wireless earbuds with noise cancellation. Shop now!",
-      "Experience ultimate sound with our flagship headphones. 25% off!",
+      "conference",
+      "mcp-server",
+      "mongo-8.0",
+      "voyage",
     ] as const;
 
     return (
-      variations[Math.floor(Math.random() * variations.length)] ??
-      "Purchase an aviation headset and get free Black QuietComfort Earbuds. Ends 8/30"
+      variations[Math.floor(Math.random() * variations.length)] ?? "mongo-8.0"
     );
   },
 });
