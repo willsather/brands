@@ -59,9 +59,6 @@
       },
       "copyright": "© 2025 MongoDB, Inc."
     },
-    "localeSelector": {
-      "language": "Language"
-    },
     "promotionalBanner": {
       "conference": {
         "text": "Join us Sept 17 at .local NYC! Use code WEB50 to save 50% on top of Early Bird tickets.",
@@ -140,9 +137,6 @@
         "meanStack": "Stack MEAN"
       },
       "copyright": "© 2025 MongoDB, Inc."
-    },
-    "localeSelector": {
-      "language": "Idioma"
     },
     "promotionalBanner": {
       "conference": {

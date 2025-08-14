@@ -3,7 +3,6 @@
 import { Check, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-import dict from "@/lib/dict.json";
 import type { Lang } from "@/lib/types";
 import { Button } from "@brands/ui/components/button";
 import {
@@ -20,7 +19,6 @@ export default function LocaleSelector({
   lang: Lang;
 }) {
   const router = useRouter();
-  const t = dict[lang];
 
   // Language options with display names
   const languageOptions: { code: Lang; name: string; flag?: string }[] = [
@@ -50,30 +48,37 @@ export default function LocaleSelector({
         <Button
           variant="ghost"
           size="sm"
-          className="flex items-center space-x-1 text-muted-foreground hover:text-foreground"
+          className="flex items-center space-x-1 text-gray-300 hover:text-white"
           aria-label={`${currentLanguage?.name || "Language"}`}
         >
           <div className="flex items-center justify-center space-x-2">
             <span className="text-lg">{currentLanguage?.flag || "🌍"}</span>
+            <span className="text-sm">{currentLanguage?.name}</span>
             <ChevronDown className="h-4 w-4" />
           </div>
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="w-64 p-2" align="start">
-        <DropdownMenuLabel className="font-medium text-sm">
-          {t.localeSelector.language}
+      <DropdownMenuContent
+        className="w-48 rounded-lg border-gray-600 bg-gray-800 p-2"
+        align="start"
+      >
+        <DropdownMenuLabel className="font-medium text-gray-300 text-sm">
+          Language
         </DropdownMenuLabel>
 
-        <div className="mb-2 space-y-1">
-          {languageOptions.map(({ code, name }) => (
+        <div className="mt-3 space-y-1">
+          {languageOptions.map(({ code, name, flag }) => (
             <DropdownMenuItem
               key={code}
-              className="flex cursor-pointer items-center justify-between"
+              className="flex cursor-pointer items-center justify-between text-gray-300 focus:bg-transparent hover:bg-transparent data-[highlighted]:bg-transparent focus:outline-none focus:ring-0 focus:border-none"
               onClick={() => handleChange("language", code)}
             >
-              <span>{name}</span>
-              {lang === code && <Check className="h-4 w-4" />}
+              <div className="flex items-center space-x-2">
+                <span className="text-base">{flag}</span>
+                <span className="hover:font-bold hover:underline">{name}</span>
+              </div>
+              {lang === code && <Check className="h-4 w-4 text-green-400" />}
             </DropdownMenuItem>
           ))}
         </div>
