@@ -10,7 +10,7 @@ import CollapsibleFooter from "@/components/collapsible-footer";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
-import "@brands/ui/styles/tailwind.css";
+import "@/app/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -7,7 +7,6 @@ import type React from "react";
 
 import { CartProvider } from "@/components/cart-provider";
 
-import "@brands/ui/styles/tailwind.css";
 import "@/app/globals.css";
 
 const bose = localFont({
