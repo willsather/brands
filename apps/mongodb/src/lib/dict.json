@@ -1,0 +1,214 @@
+{
+  "en": {
+    "navbar": {
+      "items": [
+        { "name": "Shop", "route": "/products" },
+        { "name": "Explore", "route": "/#explore" },
+        { "name": "Support", "route": "/" },
+        { "name": "Sale", "route": "/products" }
+      ]
+    },
+    "cart": {
+      "title": "Your Cart",
+      "continueShopping": "Continue shopping",
+      "empty": {
+        "title": "Your cart is empty",
+        "description": "Add some products to get started",
+        "shopNow": "Shop now"
+      },
+      "orderSummary": {
+        "title": "Order Summary",
+        "items": "Items",
+        "shipping": "Shipping",
+        "shippingFree": "Free",
+        "total": "Total",
+        "checkout": "Proceed to Checkout",
+        "taxesNote": "Taxes calculated at checkout"
+      },
+      "product": {
+        "color": "Color",
+        "addToCart": "Add to Cart",
+        "adding": "Adding..."
+      }
+    },
+    "footer": {
+      "newsletter": {
+        "title": "Being first has its perks",
+        "description": "Sign up to receive Bose emails and communications for exclusive benefits, promotions and new product information.",
+        "emailPlaceholder": "Email address",
+        "signUp": "SIGN UP"
+      },
+      "breadcrumb": "Home /",
+      "customerCare": {
+        "title": "Customer Care",
+        "troubleshooting": "Troubleshooting",
+        "repairReplacement": "Repair & Replacement",
+        "orderTracking": "Order Tracking",
+        "signInJoin": "Sign In or Join My Bose",
+        "perks": "My Bose Perks",
+        "register": "Register Your Product",
+        "boseCare": "BoseCare",
+        "contactUs": "Contact Us"
+      },
+      "company": {
+        "title": "Our company",
+        "aboutUs": "About Us",
+        "findStore": "Find a Store",
+        "esg": "ESG",
+        "careers": "Careers",
+        "pressRoom": "Press Room",
+        "stories": "Stories",
+        "partnerships": "Partnerships & Licensing",
+        "worldwide": "Bose Worldwide"
+      },
+      "offers": {
+        "title": "Offers",
+        "giftCards": "Gift Cards",
+        "idMeProgram": "ID.me Group Program",
+        "corporateGifting": "Corporate Gifting",
+        "partnerProgram": "Partner & Employee Program",
+        "refurbished": "Certified Refurbished",
+        "tradeUp": "Trade Up"
+      },
+      "additionalLinks": {
+        "title": "Additional Links",
+        "automotive": "Automotive",
+        "resellerPortal": "Reseller Portal"
+      },
+      "apps": {
+        "bose": "Bose app",
+        "connect": "Bose Connect app",
+        "qce": "Bose QCE App"
+      }
+    },
+    "hero": {
+      "back-to-school": {
+        "label": "BACK-TO-SCHOOL SALE",
+        "title": "Study hard. Play loud. Save big.",
+        "subtitle": "Start classes on a high note with deals on earbuds, speakers, and more.",
+        "primaryButton": "SHOP SALE",
+        "secondaryButton": "VIEW GIFT GUIDE"
+      },
+      "ultra-open-earbuds": {
+        "label": "ULTRA OPEN EARBUDS",
+        "title": "Sound, meet style",
+        "subtitle": "Shop and save $70 on fresh shades of Ultra Open Earbuds.",
+        "primaryButton": "SHOP SALE",
+        "secondaryButton": "VIEW GIFT GUIDE"
+      },
+      "bose-heritage": {
+        "label": "BOSE HERITAGE",
+        "title": "Sound is power",
+        "subtitle": "Discover our work on the power of sound through the decades.",
+        "primaryButton": "SHOP SALE",
+        "secondaryButton": "VIEW GIFT GUIDE"
+      }
+    }
+  },
+  "es": {
+    "navbar": {
+      "items": [
+        { "name": "Comercio", "route": "/products" },
+        { "name": "Explorar", "route": "/#explore" },
+        { "name": "Apoyo", "route": "/" },
+        { "name": "Venta", "route": "/products" }
+      ]
+    },
+    "cart": {
+      "title": "Tu carrito",
+      "continueShopping": "Continuar comprando",
+      "empty": {
+        "title": "Tu carrito está vacío",
+        "description": "Añade algunos productos para empezar",
+        "shopNow": "Comprar ahora"
+      },
+      "orderSummary": {
+        "title": "Resumen del Pedido",
+        "items": "Artículos",
+        "shipping": "Envío",
+        "shippingFree": "Gratis",
+        "total": "Total",
+        "checkout": "Proceder al Pago",
+        "taxesNote": "Impuestos calculados al finalizar la compra"
+      },
+      "product": {
+        "color": "Color",
+        "addToCart": "Añadir al Carrito",
+        "adding": "Añadiendo..."
+      }
+    },
+    "footer": {
+      "newsletter": {
+        "title": "Ser el primero tiene sus ventajas",
+        "description": "Regístrate para recibir correos electrónicos y comunicaciones de Bose para beneficios exclusivos, promociones e información de nuevos productos.",
+        "emailPlaceholder": "Correo electrónico",
+        "signUp": "REGISTRARSE"
+      },
+      "breadcrumb": "Inicio /",
+      "customerCare": {
+        "title": "Atención al Cliente",
+        "troubleshooting": "Solución de Problemas",
+        "repairReplacement": "Reparación y Reemplazo",
+        "orderTracking": "Seguimiento de Pedidos",
+        "signInJoin": "Iniciar Sesión o Únete a My Bose",
+        "perks": "Beneficios My Bose",
+        "register": "Registra tu Producto",
+        "boseCare": "BoseCare",
+        "contactUs": "Contáctanos"
+      },
+      "company": {
+        "title": "Nuestra empresa",
+        "aboutUs": "Acerca de Nosotros",
+        "findStore": "Encuentra una Tienda",
+        "esg": "ESG",
+        "careers": "Carreras",
+        "pressRoom": "Sala de Prensa",
+        "stories": "Historias",
+        "partnerships": "Asociaciones y Licencias",
+        "worldwide": "Bose en el Mundo"
+      },
+      "offers": {
+        "title": "Ofertas",
+        "giftCards": "Tarjetas de Regalo",
+        "idMeProgram": "Programa Grupal ID.me",
+        "corporateGifting": "Regalos Corporativos",
+        "partnerProgram": "Programa de Socios y Empleados",
+        "refurbished": "Reacondicionados Certificados",
+        "tradeUp": "Intercambio"
+      },
+      "additionalLinks": {
+        "title": "Enlaces Adicionales",
+        "automotive": "Automotriz",
+        "resellerPortal": "Portal de Revendedores"
+      },
+      "apps": {
+        "bose": "Aplicación Bose",
+        "connect": "Aplicación Bose Connect",
+        "qce": "Aplicación Bose QCE"
+      }
+    },
+    "hero": {
+      "back-to-school": {
+        "label": "OFERTA REGRESO A CLASES",
+        "title": "Estudia duro. Suena fuerte. Ahorra mucho.",
+        "subtitle": "Comienza las clases con buena nota con ofertas en auriculares, altavoces y más.",
+        "primaryButton": "COMPRAR OFERTA",
+        "secondaryButton": "VER GUÍA DE REGALOS"
+      },
+      "ultra-open-earbuds": {
+        "label": "ULTRA OPEN EARBUDS",
+        "title": "El sonido se encuentra con el estilo",
+        "subtitle": "Compra y ahorra $70 en tonos frescos de Ultra Open Earbuds.",
+        "primaryButton": "COMPRAR OFERTA",
+        "secondaryButton": "VER GUÍA DE REGALOS"
+      },
+      "bose-heritage": {
+        "label": "HERENCIA BOSE",
+        "title": "El sonido es poder",
+        "subtitle": "Descubre nuestro trabajo sobre el poder del sonido a través de las décadas.",
+        "primaryButton": "COMPRAR OFERTA",
+        "secondaryButton": "VER GUÍA DE REGALOS"
+      }
+    }
+  }
+}

@@ -8,6 +8,7 @@
     "lint": "biome check",
     "lint:fix": "biome check --write",
     "bose": "turbo --filter @brands/bose",
+    "mongodb": "turbo --filter @brands/mongodb",
     "vermes": "turbo --filter @brands/vermes"
   },
   "devDependencies": {
