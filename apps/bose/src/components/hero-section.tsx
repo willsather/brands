@@ -1,9 +1,9 @@
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-import { Button } from "@brands/ui/components/button";
 import dict from "@/lib/dict.json";
 import type { Lang } from "@/lib/types";
+import { Button } from "@brands/ui/components/button";
 
 export default function HeroSection({
   lang,
@@ -16,7 +16,9 @@ export default function HeroSection({
   showSecondaryButton?: boolean;
   variation?: string;
 }) {
-  const content = dict[lang].hero[variation as keyof typeof dict.en.hero] || dict[lang].hero["back-to-school"];
+  const content =
+    dict[lang].hero[variation as keyof typeof dict.en.hero] ||
+    dict[lang].hero["back-to-school"];
 
   const getImageSrc = () => {
     switch (variation) {

@@ -86,6 +86,7 @@ export default function Navbar({
           <div
             className="fixed inset-0 bg-black bg-opacity-5 transition-opacity"
             onClick={() => setIsMobileMenuOpen(false)}
+            onKeyDown={() => setIsMobileMenuOpen(false)}
           />
 
           {/* Menu panel */}
