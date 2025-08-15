@@ -16,7 +16,6 @@ export default async function LocaleLayout({
   params: Promise<{
     flagged: string;
     lang: string;
-    locale: string;
     postalCode: string;
   }>;
 }) {
