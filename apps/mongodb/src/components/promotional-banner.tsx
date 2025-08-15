@@ -52,7 +52,7 @@ export function PromotionalBanner({
         opacity: isVisible ? 1 : 0,
       }}
     >
-      <div className="rounded-3xl bg-[#B1FF05] px-2 py-0.5 text-[#001E2B] uppercase">
+      <div className="flex-shrink-0 whitespace-nowrap rounded-3xl bg-[#B1FF05] px-2 py-0.5 text-[#001E2B] uppercase">
         {variations[text]?.cta}
       </div>
       <span className="font-medium">{variations[text]?.text}</span>
