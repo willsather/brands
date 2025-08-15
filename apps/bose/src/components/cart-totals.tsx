@@ -4,7 +4,7 @@ import type { CartItem } from "@/app/actions/cart";
 import { useCartTotals } from "@/hooks/use-cart-totals";
 import dict from "@/lib/dict.json";
 import type { Product } from "@/lib/product";
-import type { Lang, Locale } from "@/lib/types";
+import type { Lang, Locale } from "@brands/utils";
 import { formatPrice } from "@/lib/utils";
 
 export default function CartTotals({

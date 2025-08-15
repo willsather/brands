@@ -1,7 +1,7 @@
 "use client";
 
 import dict from "@/lib/dict.json";
-import type { Lang } from "@/lib/types";
+import type { Lang } from "@brands/utils";
 import { type FormEvent, useState } from "react";
 
 export function Newsletter({ lang }: { lang: Lang }) {

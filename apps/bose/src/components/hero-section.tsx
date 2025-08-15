@@ -2,8 +2,8 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 import dict from "@/lib/dict.json";
-import type { Lang } from "@/lib/types";
 import { Button } from "@brands/ui/components/button";
+import type { Lang } from "@brands/utils";
 
 export default function HeroSection({
   lang,

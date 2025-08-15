@@ -1,6 +1,6 @@
 import type { CartItem } from "@/app/actions/cart";
 import type { Product } from "@/lib/product";
-import type { Locale } from "@/lib/types";
+import type { Locale } from "@brands/utils";
 import { useMemo } from "react";
 
 // Price multipliers for different locales

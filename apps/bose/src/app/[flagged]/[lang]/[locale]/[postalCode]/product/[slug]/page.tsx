@@ -1,7 +1,7 @@
 import ProductDetail from "@/components/product-detail";
 import { flags } from "@/lib/flags";
 import { getProducts } from "@/lib/product";
-import { LangSchema, LocaleSchema } from "@/lib/types";
+import { LangSchema, LocaleSchema } from "@brands/utils";
 import { deserialize } from "flags/next";
 import { notFound } from "next/navigation";
 

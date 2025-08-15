@@ -1,12 +1,5 @@
-import { geolocation } from "@vercel/functions";
+import { getPostalCode } from "@brands/utils";
 import { type NextRequest, NextResponse } from "next/server";
-
-// Get postal code from Vercel request
-function getPostalCode(request: NextRequest) {
-  const { postalCode } = geolocation(request);
-
-  return postalCode ?? "undefined";
-}
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;

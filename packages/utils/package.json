@@ -1,0 +1,25 @@
+{
+  "name": "@brands/utils",
+  "version": "0.0.0",
+  "private": true,
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "watch": "tsup --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "next": "canary",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@brands/vitest-config": "workspace:*",
+    "@brands/typescript-config": "workspace:*",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "3.2.4"
+  }
+}

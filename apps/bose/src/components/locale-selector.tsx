@@ -2,7 +2,7 @@
 import { Check, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-import type { Lang, Locale } from "@/lib/types";
+import type { Lang, Locale } from "@brands/utils";
 import { Button } from "@brands/ui/components/button";
 import {
   DropdownMenu,

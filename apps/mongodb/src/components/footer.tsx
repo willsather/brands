@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import LocaleSelector from "@/components/locale-selector";
 import dict from "@/lib/dict.json";
-import type { Lang } from "@/lib/types";
+import type { Lang } from "@brands/utils";
 
 export function Footer({
   lang,

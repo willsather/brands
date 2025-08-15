@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { PromotionalBanner } from "@/components/promotional-banner";
 import { flags } from "@/lib/flags";
-import { LangSchema } from "@/lib/types";
+import { LangSchema } from "@brands/utils";
 
 import { deserialize } from "flags/next";
 

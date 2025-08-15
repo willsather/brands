@@ -1,41 +1,7 @@
 import { flags } from "@/lib/flags";
-import { LangSchema } from "@/lib/types";
+import { getLanguage, getLocale, getPostalCode } from "@brands/utils";
 import { precompute } from "flags/next";
 import { type NextRequest, NextResponse } from "next/server";
-
-function getLanguage(request: NextRequest) {
-  // check if there's a cookie with language preference
-  const cookieLang = request.cookies.get("NEXT_LANGUAGE")?.value;
-  if (cookieLang) {
-    return LangSchema.parse(cookieLang);
-  }
-
-  // check Accept-Language header
-  const acceptLanguage = request.headers.get("accept-language");
-  if (acceptLanguage) {
-    const parsedLanguages = acceptLanguage
-      .split(",")
-      .map((l) => l.split(";")[0]?.trim())
-      .filter((l): l is string => Boolean(l));
-
-    const language = parsedLanguages.find((l) => {
-      const { success } = LangSchema.safeParse(l.substring(0, 2));
-      return success;
-    });
-
-    if (language) {
-      return language.substring(0, 2);
-    }
-  }
-
-  // default to English
-  return "es";
-}
-
-function getPostalCode(request: NextRequest) {
-  const postalCode = request.headers.get("x-vercel-ip-postal-code");
-  return postalCode || "undefined";
-}
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;

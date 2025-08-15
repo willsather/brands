@@ -1,6 +1,6 @@
 import HeroSection from "@/components/hero-section";
 import { flags } from "@/lib/flags";
-import { LangSchema } from "@/lib/types";
+import { LangSchema } from "@brands/utils";
 import { deserialize } from "flags/next";
 
 export function generateStaticParams() {

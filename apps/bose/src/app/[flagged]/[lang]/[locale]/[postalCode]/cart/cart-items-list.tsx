@@ -1,7 +1,7 @@
 import type { CartItem } from "@/app/actions/cart";
 import SkinnyProductCard from "@/components/skinny-product-card";
 import type { Product } from "@/lib/product";
-import type { Lang, Locale } from "@/lib/types";
+import type { Lang, Locale } from "@brands/utils";
 
 export default function CartItemsList({
   items,

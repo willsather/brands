@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getCart } from "@/app/actions/cart";
 import dict from "@/lib/dict.json";
 import { getAllProducts } from "@/lib/products";
-import type { Lang, Locale } from "@/lib/types";
+import type { Lang, Locale } from "@brands/utils";
 import { Button } from "@brands/ui/components/button";
 
 import CartItemsList from "./cart-items-list";

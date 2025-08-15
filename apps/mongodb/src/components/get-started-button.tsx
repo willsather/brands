@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import dict from "@/lib/dict.json";
-import type { Lang } from "@/lib/types";
+import type { Lang } from "@brands/utils";
 
 export function GetStartedButton({ lang, className }: { lang?: Lang; className?: string }) {
   const t = dict[lang || "en"];

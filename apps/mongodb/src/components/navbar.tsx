@@ -7,7 +7,7 @@ import { useState } from "react";
 import { GetStartedButton } from "@/components/get-started-button";
 import { Logo } from "@/components/logo";
 import dict from "@/lib/dict.json";
-import type { Lang } from "@/lib/types";
+import type { Lang } from "@brands/utils";
 import { Button } from "@brands/ui/components/button";
 
 export default function Navbar({ lang }: { lang: Lang }) {

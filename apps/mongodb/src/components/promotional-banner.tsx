@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 import dict from "@/lib/dict.json";
-import type { Lang } from "@/lib/types";
+import type { Lang } from "@brands/utils";
 
 export function PromotionalBanner({
   text,

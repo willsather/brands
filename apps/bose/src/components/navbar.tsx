@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useCart } from "./cart-provider";
 
 import dict from "@/lib/dict.json";
-import type { Lang, Locale } from "@/lib/types";
+import type { Lang, Locale } from "@brands/utils";
 
 export default function Navbar({
   lang,

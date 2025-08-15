@@ -3,7 +3,7 @@ import Image from "next/image";
 import LocaleSelector from "@/components/locale-selector";
 import { Newsletter } from "@/components/newsletter";
 import dict from "@/lib/dict.json";
-import type { Lang, Locale } from "@/lib/types";
+import type { Lang, Locale } from "@brands/utils";
 
 export function Footer({
   lang,
