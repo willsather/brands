@@ -21,12 +21,15 @@ export default function HeroSection({
 
   return (
     <section className="relative min-h-[90vh] w-full overflow-hidden">
-      <div className="container mx-auto flex h-full min-h-[90vh] items-center px-6 py-8 lg:py-16">
+      <div className="container mx-auto flex h-full min-h-[90vh] items-center py-8 lg:py-16">
         <div className="grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="space-y-6 lg:space-y-8">
             <div className="space-y-2">
-              <div className="font-medium text-green-600 text-sm uppercase tracking-wide">
-                {t.hero.atlas}
+              <div className="flex items-center gap-3">
+                <div className="h-6 w-0.5 bg-[#00ED64]"></div>
+                <div className="font-mono font-medium text-[#00684A] text-sm uppercase tracking-widest">
+                  {t.hero.atlas}
+                </div>
               </div>
             </div>
 
@@ -43,16 +46,18 @@ export default function HeroSection({
             </div>
 
             <div className="flex items-center gap-4">
-              <GetStartedButton lang={lang} />
+              {showPrimaryButton && <GetStartedButton lang={lang} />}
 
-              <Button
-                variant="ghost"
-                size="lg"
-                className="group flex p-0 font-medium text-base text-gray-700 hover:text-gray-900"
-              >
-                {t.hero.learnMore}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              {showSecondaryButton && (
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="group flex p-0 font-medium text-base text-gray-700 hover:text-gray-900"
+                >
+                  {t.hero.learnMore}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              )}
             </div>
           </div>
 
