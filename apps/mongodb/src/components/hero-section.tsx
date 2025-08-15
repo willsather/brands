@@ -20,24 +20,24 @@ export default function HeroSection({
   const t = dict[lang];
 
   return (
-    <section className="relative h-[90vh] w-full overflow-hidden">
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="space-y-8">
+    <section className="relative min-h-[90vh] w-full overflow-hidden">
+      <div className="container mx-auto flex h-full min-h-[90vh] items-center px-6 py-8 lg:py-16">
+        <div className="grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-12">
+          <div className="space-y-6 lg:space-y-8">
             <div className="space-y-2">
               <div className="font-medium text-green-600 text-sm uppercase tracking-wide">
                 {t.hero.atlas}
               </div>
             </div>
 
-            <div className="space-y-6">
-              <h1 className="text-5xl text-gray-900 leading-tight lg:text-6xl">
+            <div className="space-y-4 lg:space-y-6">
+              <h1 className="text-3xl text-gray-900 leading-tight sm:text-4xl lg:text-5xl xl:text-6xl">
                 {t.hero.title}{" "}
                 <span className="block">{t.hero.titleLine2}</span>
                 <span className="block">{t.hero.titleLine3}</span>
               </h1>
 
-              <p className="max-w-lg text-gray-600 text-lg leading-relaxed">
+              <p className="max-w-lg text-gray-600 text-base leading-relaxed lg:text-lg">
                 {t.hero.description}
               </p>
             </div>
