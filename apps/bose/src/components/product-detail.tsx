@@ -43,6 +43,12 @@ export default function ProductDetail({
     formData.append("locale", locale);
     formData.append("color", selectedColor?.name ?? "Default");
 
+    // analytics context
+    formData.append("section", "product_detail");
+    formData.append("productTitle", product.title);
+    formData.append("productPrice", product.price.toString());
+    formData.append("productCategory", product.category || "audio");
+
     startTransition(async () => {
       await addToCart(formData);
       await refreshCart();

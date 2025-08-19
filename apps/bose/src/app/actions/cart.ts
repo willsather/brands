@@ -34,6 +34,11 @@ export async function addToCart(formData: FormData): Promise<CartData> {
   const locale = (formData.get("locale") as string) || "us";
   const color = (formData.get("color") as string) || "Default";
 
+  const section = (formData.get("section") as string) || "unknown";
+  const productTitle = formData.get("productTitle") as string;
+  const productPrice = formData.get("productPrice") as string;
+  const productCategory = formData.get("productCategory") as string;
+
   // Get current cart
   const currentCart = await getCart();
 
@@ -79,9 +84,22 @@ export async function addToCart(formData: FormData): Promise<CartData> {
     maxAge: 60 * 60 * 24 * 7, // 1 week
   });
 
-  await track("Added to Cart", {
-    productId,
-    quantity,
+  const eventName =
+    section === "trending"
+      ? "add_to_cart_trending"
+      : section === "product_detail"
+        ? "add_to_cart_pdp"
+        : "add_to_cart";
+
+  await track(eventName, {
+    product_id: productId,
+    product_title: productTitle,
+    product_price: productPrice ? Number(productPrice) : 0,
+    product_color: color,
+    product_category: productCategory || "audio",
+    locale: locale,
+    section: section,
+    quantity: quantity,
   });
 
   return updatedCart;

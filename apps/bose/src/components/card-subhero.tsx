@@ -1,5 +1,6 @@
-import { Button } from "@brands/ui/components/button";
 import Image from "next/image";
+
+import CardSubheroCTAButtons from "./card-subhero-cta-buttons";
 
 export default function CardSubhero() {
   return (
@@ -28,12 +29,10 @@ export default function CardSubhero() {
             Shop a selection of gifts that can start the school year on a high
             note.
           </p>
-          <Button
-            variant="outline"
-            className="bg-white text-black hover:bg-gray-100"
-          >
-            VIEW GIFT GUIDE
-          </Button>
+          <CardSubheroCTAButtons
+            type="gift-guide"
+            buttonText="VIEW GIFT GUIDE"
+          />
         </div>
       </div>
 
@@ -58,12 +57,7 @@ export default function CardSubhero() {
               All the performance you expect — for less. Save up to 40% for a
               limited time.
             </p>
-            <Button
-              variant="outline"
-              className="w-fit bg-white text-black hover:bg-gray-100"
-            >
-              SHOP
-            </Button>
+            <CardSubheroCTAButtons type="refurbished" buttonText="SHOP" />
           </div>
         </div>
 
@@ -87,12 +81,7 @@ export default function CardSubhero() {
                 Win the limited-edition C25 mixtape, a cassette player, and a
                 pair of QuietComfort headphones.
               </p>
-              <Button
-                variant="outline"
-                className="w-fit bg-white text-black hover:bg-gray-100"
-              >
-                ENTER NOW
-              </Button>
+              <CardSubheroCTAButtons type="giveaway" buttonText="ENTER NOW" />
             </div>
           </div>
         </div>

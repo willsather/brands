@@ -21,7 +21,7 @@ export default function Navbar({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); //  added mobile menu state
 
   return (
-    <nav className="sticky top-0 z-10 border-gray-200 border-b bg-white">
+    <nav className="sticky top-0 z-20 border-gray-200 border-b bg-white">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/*  Desktop navigation - hidden on mobile */}

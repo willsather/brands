@@ -40,6 +40,12 @@ export default function ProductCard({
     formData.append("locale", locale);
     formData.append("color", current.name);
 
+    // analytics context
+    formData.append("section", "trending");
+    formData.append("productTitle", product.title);
+    formData.append("productPrice", product.price.toString());
+    formData.append("productCategory", product.category || "audio");
+
     startTransition(async () => {
       await addToCart(formData);
       await refreshCart();

@@ -1,9 +1,8 @@
-import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 import dict from "@/lib/dict.json";
-import { Button } from "@brands/ui/components/button";
 import type { Lang } from "@brands/utils";
+import HeroCTAButtons from "./hero-cta-buttons";
 
 export default function HeroSection({
   lang,
@@ -64,27 +63,14 @@ export default function HeroSection({
             </p>
 
             {/* Action buttons */}
-            <div className="flex flex-col gap-4 sm:flex-row">
-              {showPrimaryButton && (
-                <Button
-                  size="lg"
-                  className="bg-white px-8 font-semibold text-black hover:bg-white/90"
-                >
-                  {content.primaryButton}
-                </Button>
-              )}
-
-              {showSecondaryButton && (
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  className="group font-medium text-white hover:bg-transparent hover:text-white hover:underline"
-                >
-                  {content.secondaryButton}
-                  <ChevronRight className="ml-2 size-5" />
-                </Button>
-              )}
-            </div>
+            <HeroCTAButtons
+              showPrimaryButton={showPrimaryButton}
+              showSecondaryButton={showSecondaryButton}
+              primaryButtonText={content.primaryButton}
+              secondaryButtonText={content.secondaryButton}
+              variation={variation}
+              lang={lang}
+            />
           </div>
         </div>
       </div>
