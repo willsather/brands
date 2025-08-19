@@ -33,3 +33,16 @@ export function getLanguage(request: NextRequest) {
   // default to English
   return "es";
 }
+
+/**
+ * Maps Lang codes to JavaScript locale codes for Intl APIs
+ * Makes it easy to expand to new languages in the future
+ */
+export function langToLocale(lang: Lang): string {
+  const localeMap: Record<Lang, string> = {
+    en: "en-US",
+    es: "es-ES",
+  };
+
+  return localeMap[lang] ?? "en-US";
+}

@@ -1,15 +1,19 @@
 "use client";
 
-import { ArrowLeft, Heart } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useTransition } from "react";
 
+import { Button } from "@brands/ui/components/button";
+import type { Lang, Locale } from "@brands/utils";
+
 import { addToCart } from "@/app/actions/cart";
+import dict from "@/lib/dict.json";
 import type { Product } from "@/lib/product";
 import { formatPrice } from "@/lib/utils";
-import { Button } from "@brands/ui/components/button";
 
+import StoreLocator from "@/components/store-locator";
 import { useCart } from "./cart-provider";
 
 export default function ProductDetail({
@@ -17,17 +21,18 @@ export default function ProductDetail({
   lang,
   locale,
   postalCode,
-  showDeliveryText = true,
+  showDeliveryText,
 }: {
   product: Product;
-  lang: string;
-  locale: string;
+  lang: Lang;
+  locale: Locale;
   postalCode: string;
-  showDeliveryText?: boolean;
+  showDeliveryText: boolean;
 }) {
+  const t = dict[lang];
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
-  const [isFavorited, setIsFavorited] = useState(false);
   const [isPending, startTransition] = useTransition();
+
   const { refreshCart } = useCart();
 
   if (product?.colors == null || product.colors[0] == null) {
@@ -62,9 +67,7 @@ export default function ProductDetail({
         className="mb-8 inline-flex items-center text-gray-600 hover:text-gray-900"
       >
         <ArrowLeft className="mr-2 h-4 w-4" />
-        {lang === "en"
-          ? "Back to all products"
-          : "Volver a todos los productos"}
+        {t.product.backToProducts}
       </Link>
 
       <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
@@ -150,14 +153,11 @@ export default function ProductDetail({
             )}
           </div>
 
-          {showDeliveryText && postalCode && postalCode !== "undefined" && (
-            <p className="text-gray-600 text-sm">
-              Order now for delivery as soon as Thursday, August 14 to{" "}
-              <span className="cursor-pointer text-blue-600 underline hover:text-blue-800">
-                {postalCode}
-              </span>
-            </p>
-          )}
+          <StoreLocator
+            lang={lang}
+            postalCode={postalCode}
+            enabled={showDeliveryText}
+          />
 
           <div className="flex items-center space-x-4">
             <button
@@ -166,15 +166,7 @@ export default function ProductDetail({
               disabled={isPending}
               type="button"
             >
-              <span>
-                {isPending
-                  ? lang === "en"
-                    ? "Adding..."
-                    : "Añadiendo..."
-                  : lang === "en"
-                    ? "Add to Cart"
-                    : "Añadir al Carrito"}
-              </span>
+              <span>{isPending ? t.product.adding : t.product.addToCart}</span>
             </button>
           </div>
         </div>

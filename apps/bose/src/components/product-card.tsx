@@ -68,7 +68,7 @@ export default function ProductCard({
       </Button>
 
       <Link
-        href={`/product/${product.slug}`}
+        href={`/products/${product.slug}`}
         prefetch
         className="flex flex-1 flex-col"
       >
