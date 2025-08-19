@@ -130,7 +130,7 @@ export async function removeFromCart(
     maxAge: 60 * 60 * 24 * 7, // 1 week
   });
 
-  await track("Removed from Cart", {
+  await track("removed_from_cart", {
     productId,
     color,
   });
@@ -171,7 +171,7 @@ export async function updateCartItemQuantity(
     maxAge: 60 * 60 * 24 * 7, // 1 week
   });
 
-  await track("Updated Cart Quantity", {
+  await track("updated_cart_quantity", {
     productId,
     color,
     quantity,
