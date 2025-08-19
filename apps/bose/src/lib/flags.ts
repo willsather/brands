@@ -1,21 +1,25 @@
+import { edgeConfigAdapter } from "@flags-sdk/edge-config";
 import { flag } from "flags/next";
 
 export const showHeroPrimaryButton = flag<boolean>({
   key: "show-hero-primary-button",
   description: "show/hide hero primary button (SHOP SALE)",
+  adapter: edgeConfigAdapter(),
   defaultValue: true,
-  decide() {
-    return true;
-  },
 });
 
 export const showHeroSecondaryButton = flag<boolean>({
   key: "show-hero-secondary-button",
   description: "show/hide hero secondary button (VIEW GIFT GUIDE)",
+  adapter: edgeConfigAdapter(),
   defaultValue: true,
-  decide() {
-    return true;
-  },
+});
+
+export const showDeliveryText = flag<boolean>({
+  key: "show-delivery-text",
+  description: "enable delivery date text on product page",
+  adapter: edgeConfigAdapter(),
+  defaultValue: true,
 });
 
 export const promoBannerFlag = flag<string>({
@@ -85,15 +89,6 @@ export const heroVariation = flag<string>({
       variations[Math.floor(Math.random() * variations.length)] ??
       "back-to-school"
     );
-  },
-});
-
-export const showDeliveryText = flag<boolean>({
-  key: "show-delivery-text",
-  description: "enable delivery date text on product page",
-  defaultValue: true,
-  decide() {
-    return true;
   },
 });
 
