@@ -81,6 +81,9 @@
         "qce": "Bose QCE App"
       }
     },
+    "delivery": {
+      "text": "Order now for delivery as soon as {date} to"
+    },
     "product": {
       "backToProducts": "Back to all products",
       "addToCart": "Add to Cart",
@@ -191,6 +194,9 @@
         "connect": "Aplicación Bose Connect",
         "qce": "Aplicación Bose QCE"
       }
+    },
+    "delivery": {
+      "text": "Ordena ahora para entrega tan pronto como el {date} a"
     },
     "product": {
       "backToProducts": "Volver a todos los productos",
