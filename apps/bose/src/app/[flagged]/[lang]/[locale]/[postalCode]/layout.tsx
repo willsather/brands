@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type React from "react";
+import { Suspense } from "react";
 
 import { Footer } from "@/components/footer";
 import Navbar from "@/components/navbar";
@@ -7,7 +7,14 @@ import { PromotionalBanner } from "@/components/promotional-banner";
 import { flags } from "@/lib/flags";
 import { LangSchema, LocaleSchema } from "@brands/utils";
 
+import { type FlagValuesType, encryptFlagValues } from "flags";
 import { deserialize } from "flags/next";
+import { FlagValues } from "flags/react";
+
+async function ConfidentialFlagValues({ values }: { values: FlagValuesType }) {
+  const encryptedFlagValues = await encryptFlagValues(values);
+  return <FlagValues values={encryptedFlagValues} />;
+}
 
 export default async function LocaleLayout({
   children,
@@ -36,6 +43,10 @@ export default async function LocaleLayout({
         {children}
         <Footer lang={validLang} locale={validLocale} />
       </div>
+
+      <Suspense fallback={null}>
+        <ConfidentialFlagValues values={decisions} />
+      </Suspense>
     </>
   );
 }
