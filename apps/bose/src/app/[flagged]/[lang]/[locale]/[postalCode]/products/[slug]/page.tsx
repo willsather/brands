@@ -1,8 +1,6 @@
 import ProductDetail from "@/components/product-detail";
-import { flags } from "@/lib/flags";
 import { getProducts } from "@/lib/product";
 import { LangSchema, LocaleSchema } from "@brands/utils";
-import { deserialize } from "flags/next";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
@@ -20,9 +18,8 @@ export default async function ProductPage({
     slug: string;
   }>;
 }) {
-  const { flagged, lang, locale, postalCode, slug } = await params;
+  const { lang, locale, slug } = await params;
   const products = await getProducts();
-  const decisions = await deserialize(flags, flagged);
 
   const validLang = LangSchema.parse(lang);
   const validLocale = LocaleSchema.parse(locale);
@@ -40,8 +37,6 @@ export default async function ProductPage({
           product={product}
           lang={validLang}
           locale={validLocale}
-          postalCode={postalCode}
-          showDeliveryText={decisions["show-delivery-text"]}
         />
       </div>
     </main>
