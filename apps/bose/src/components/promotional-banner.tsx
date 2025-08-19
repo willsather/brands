@@ -3,13 +3,16 @@
 import { useEffect, useState } from "react";
 
 export function PromotionalBanner({ text }: { text: string }) {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setIsVisible(scrollY < 50);
     };
+
+    // Set initial visibility based on current scroll position
+    setIsVisible(window.scrollY < 50);
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
