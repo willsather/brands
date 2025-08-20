@@ -54,8 +54,18 @@ export const promoBannerFlag = flag<string>({
   },
 });
 
+export const showSubhero = flag<boolean>({
+  key: "show-subhero",
+  description: "show/hide Gartner subhero section",
+  defaultValue: true,
+  decide() {
+    return true;
+  },
+});
+
 export const flags = [
   showHeroPrimaryButton,
   showHeroSecondaryButton,
   promoBannerFlag,
+  showSubhero,
 ] as const;

@@ -19,6 +19,11 @@
       "description": "You don't need a separate database to handle transactions, rich search, or generative AI. The world's most popular modern database adapts and scales to handle all your application requirements.",
       "learnMore": "Learn more"
     },
+    "subhero": {
+      "title": "Gartner names MongoDB a Leader again",
+      "description": "For the third year in a row, MongoDB has been named a Leader in the 2024 Gartner® Magic Quadrant™ for Cloud Database Management Systems.",
+      "ctaText": "Read the Report"
+    },
     "buttons": {
       "getStarted": "Get Started"
     },
@@ -97,6 +102,11 @@
       "titleLine3": "modernas.",
       "description": "No necesitas una base de datos separada para manejar transacciones, búsquedas avanzadas o IA generativa. La base de datos moderna más popular del mundo se adapta y escala para manejar todos los requisitos de tu aplicación.",
       "learnMore": "Aprende más"
+    },
+    "subhero": {
+      "title": "Gartner nombra a MongoDB Líder nuevamente",
+      "description": "Por tercer año consecutivo, MongoDB ha sido nombrado Líder en el Cuadrante Mágico Gartner® 2024 para Sistemas de Gestión de Bases de Datos en la Nube.",
+      "ctaText": "Leer el Informe"
     },
     "buttons": {
       "getStarted": "Comenzar"
