@@ -46,7 +46,7 @@ export function PromotionalBanner({
 
   return (
     <div
-      className="fixed top-0 right-0 left-0 z-10 flex items-center gap-2 bg-[#00684A] px-2 py-2 font-mono text-white text-[10px] sm:gap-5 sm:px-4 sm:py-3 sm:text-xs transition-all duration-500 ease-in-out"
+      className="fixed top-0 right-0 left-0 z-10 flex items-center gap-2 bg-[#00684A] px-2 py-2 font-mono text-[10px] text-white transition-all duration-500 ease-in-out sm:gap-5 sm:px-4 sm:py-3 sm:text-xs"
       style={{
         transform: isVisible ? "translateY(0)" : "translateY(-100%)",
         opacity: isVisible ? 1 : 0,

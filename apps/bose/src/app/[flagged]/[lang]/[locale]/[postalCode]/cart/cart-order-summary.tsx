@@ -4,8 +4,8 @@ import type { CartItem } from "@/app/actions/cart";
 import CartTotals from "@/components/cart-totals";
 import dict from "@/lib/dict.json";
 import type { Product } from "@/lib/product";
-import type { Lang, Locale } from "@brands/utils";
 import { Button } from "@brands/ui/components/button";
+import type { Lang, Locale } from "@brands/utils";
 
 export default function CartOrderSummary({
   lang,

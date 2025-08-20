@@ -3,7 +3,6 @@
 import { Check, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-import type { Lang } from "@brands/utils";
 import { Button } from "@brands/ui/components/button";
 import {
   DropdownMenu,
@@ -12,6 +11,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@brands/ui/components/dropdown-menu";
+import type { Lang } from "@brands/utils";
 
 export default function LocaleSelector({
   lang,
@@ -71,7 +71,7 @@ export default function LocaleSelector({
           {languageOptions.map(({ code, name, flag }) => (
             <DropdownMenuItem
               key={code}
-              className="flex cursor-pointer items-center justify-between text-gray-300 focus:bg-transparent hover:bg-transparent data-[highlighted]:bg-transparent focus:outline-none focus:ring-0 focus:border-none"
+              className="flex cursor-pointer items-center justify-between text-gray-300 hover:bg-transparent focus:border-none focus:bg-transparent focus:outline-none focus:ring-0 data-[highlighted]:bg-transparent"
               onClick={() => handleChange("language", code)}
             >
               <div className="flex items-center space-x-2">

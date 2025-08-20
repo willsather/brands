@@ -3,8 +3,8 @@ import Image from "next/image";
 import type { CartItem } from "@/app/actions/cart";
 import dict from "@/lib/dict.json";
 import type { Product } from "@/lib/product";
-import type { Lang, Locale } from "@brands/utils";
 import { formatPrice } from "@/lib/utils";
+import type { Lang, Locale } from "@brands/utils";
 
 import CartQuantityControls from "./cart-quantity-controls";
 import CartRemoveButton from "./cart-remove-button";

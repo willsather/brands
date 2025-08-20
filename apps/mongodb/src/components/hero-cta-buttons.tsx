@@ -1,9 +1,9 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
-import { track } from "@vercel/analytics";
 import { Button } from "@brands/ui/components/button";
 import type { Lang } from "@brands/utils";
+import { track } from "@vercel/analytics";
+import { ArrowRight } from "lucide-react";
 
 import { GetStartedButton } from "@/components/get-started-button";
 import dict from "@/lib/dict.json";
@@ -11,14 +11,12 @@ import dict from "@/lib/dict.json";
 interface HeroCTAButtonsProps {
   showPrimaryButton: boolean;
   showSecondaryButton: boolean;
-  variation: string;
   lang: Lang;
 }
 
 export default function HeroCTAButtons({
   showPrimaryButton,
   showSecondaryButton,
-  variation,
   lang,
 }: HeroCTAButtonsProps) {
   const t = dict[lang];
@@ -26,7 +24,6 @@ export default function HeroCTAButtons({
   const handlePrimaryButtonClick = () => {
     track("hero_primary_cta_click", {
       button_text: t.buttons.getStarted,
-      hero_variation: variation,
       language: lang,
       section: "hero",
       button_type: "primary",
@@ -36,7 +33,6 @@ export default function HeroCTAButtons({
   const handleSecondaryButtonClick = () => {
     track("hero_secondary_cta_click", {
       button_text: t.hero.learnMore,
-      hero_variation: variation,
       language: lang,
       section: "hero",
       button_type: "secondary",
@@ -46,9 +42,7 @@ export default function HeroCTAButtons({
   return (
     <div className="flex items-center gap-4">
       {showPrimaryButton && (
-        <div onClick={handlePrimaryButtonClick}>
-          <GetStartedButton lang={lang} />
-        </div>
+        <GetStartedButton lang={lang} onClick={handlePrimaryButtonClick} />
       )}
 
       {showSecondaryButton && (

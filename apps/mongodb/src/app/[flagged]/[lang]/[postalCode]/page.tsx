@@ -22,15 +22,12 @@ export default async function Home({
   const validLang = LangSchema.parse(lang);
 
   return (
-    <div className="space-y-8">
+    <div className="mx-2 space-y-8">
       <HeroSection
         lang={validLang}
         showPrimaryButton={decisions["show-hero-primary-button"]}
         showSecondaryButton={decisions["show-hero-secondary-button"]}
-        variation={decisions["hero-variation"]}
       />
-
-      <main className="container mx-auto px-4 py-8" />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { track } from "@vercel/analytics";
 import { Button } from "@brands/ui/components/button";
+import { track } from "@vercel/analytics";
+import Link from "next/link";
 
 interface CardSubheroCTAButtonsProps {
   type: "gift-guide" | "refurbished" | "giveaway";
@@ -49,9 +49,7 @@ export default function CardSubheroCTAButtons({
       onClick={handleClick}
       asChild
     >
-      <Link href="/products">
-        {buttonText}
-      </Link>
+      <Link href="/products">{buttonText}</Link>
     </Button>
   );
 }

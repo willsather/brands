@@ -54,50 +54,8 @@ export const promoBannerFlag = flag<string>({
   },
 });
 
-export const heroVariation = flag<string>({
-  key: "hero-variation",
-  description: "hero section variation with different images and content",
-  defaultValue: "back-to-school",
-  options: [
-    {
-      value: "back-to-school",
-      label: "Back-to-School Sale",
-    },
-    {
-      value: "ultra-open-earbuds",
-      label: "Ultra Open Earbuds Promo",
-    },
-    {
-      value: "bose-heritage",
-      label: "Bose Heritage Story",
-    },
-  ],
-  decide() {
-    const variations = [
-      "back-to-school",
-      "ultra-open-earbuds",
-      "bose-heritage",
-    ] as const;
-    return (
-      variations[Math.floor(Math.random() * variations.length)] ??
-      "back-to-school"
-    );
-  },
-});
-
-export const showDeliveryText = flag<boolean>({
-  key: "show-delivery-text",
-  description: "enable delivery date text on product page",
-  defaultValue: true,
-  decide() {
-    return true;
-  },
-});
-
 export const flags = [
   showHeroPrimaryButton,
   showHeroSecondaryButton,
-  heroVariation,
   promoBannerFlag,
-  showDeliveryText,
 ] as const;

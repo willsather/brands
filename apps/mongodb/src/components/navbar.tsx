@@ -7,8 +7,8 @@ import { useState } from "react";
 import { GetStartedButton } from "@/components/get-started-button";
 import { Logo } from "@/components/logo";
 import dict from "@/lib/dict.json";
-import type { Lang } from "@brands/utils";
 import { Button } from "@brands/ui/components/button";
+import type { Lang } from "@brands/utils";
 
 export default function Navbar({ lang }: { lang: Lang }) {
   const t = dict[lang];
@@ -42,7 +42,11 @@ export default function Navbar({ lang }: { lang: Lang }) {
             {/* Desktop Actions */}
             <div className="hidden items-center space-x-4 md:flex">
               {/* Search Icon */}
-              <Button variant="ghost" size="sm" className="p-2 text-gray-600 transition-colors hover:text-gray-900">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="p-2 text-gray-600 transition-colors hover:text-gray-900"
+              >
                 <Search className="h-5 w-5" />
               </Button>
 
@@ -117,12 +121,18 @@ export default function Navbar({ lang }: { lang: Lang }) {
                 <Link
                   href="/signin"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block w-full rounded-xl border border-[#001E2B] bg-[#001E2B] px-4 py-2 font-medium text-center text-white transition-colors duration-200 hover:bg-gray-800"
+                  className="block w-full rounded-xl border border-[#001E2B] bg-[#001E2B] px-4 py-2 text-center font-medium text-white transition-colors duration-200 hover:bg-gray-800"
                 >
                   {t.navbar.signIn}
                 </Link>
-                <div onClick={() => setIsMobileMenuOpen(false)}>
-                  <GetStartedButton lang={lang} className="block w-full text-center" />
+                <div
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  onKeyDown={() => setIsMobileMenuOpen(false)}
+                >
+                  <GetStartedButton
+                    lang={lang}
+                    className="block w-full text-center"
+                  />
                 </div>
               </div>
             </div>

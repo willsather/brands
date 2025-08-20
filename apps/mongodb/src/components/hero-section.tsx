@@ -7,14 +7,12 @@ import HeroCTAButtons from "@/components/hero-cta-buttons";
 
 export default function HeroSection({
   lang,
-  showPrimaryButton = true,
-  showSecondaryButton = true,
-  variation = "back-to-school",
+  showPrimaryButton,
+  showSecondaryButton,
 }: {
   lang: Lang;
-  showPrimaryButton?: boolean;
-  showSecondaryButton?: boolean;
-  variation?: string;
+  showPrimaryButton: boolean;
+  showSecondaryButton: boolean;
 }) {
   const t = dict[lang];
 
@@ -25,8 +23,8 @@ export default function HeroSection({
           <div className="space-y-6 lg:space-y-8">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
-                <div className="h-6 w-0.5 bg-[#00ED64]"></div>
-                <div className="font-mono font-medium text-[#00684A] text-sm uppercase tracking-widest">
+                <div className="h-6 w-0.5 bg-[#00ED64]" />
+                <div className="font-medium font-mono text-[#00684A] text-sm uppercase tracking-widest">
                   {t.hero.atlas}
                 </div>
               </div>
@@ -39,7 +37,7 @@ export default function HeroSection({
                 <span className="block">{t.hero.titleLine3}</span>
               </h1>
 
-              <p className="max-w-lg text-gray-600 text-base leading-relaxed lg:text-lg">
+              <p className="max-w-lg text-base text-gray-600 leading-relaxed lg:text-lg">
                 {t.hero.description}
               </p>
             </div>
@@ -47,7 +45,6 @@ export default function HeroSection({
             <HeroCTAButtons
               showPrimaryButton={showPrimaryButton}
               showSecondaryButton={showSecondaryButton}
-              variation={variation}
               lang={lang}
             />
           </div>

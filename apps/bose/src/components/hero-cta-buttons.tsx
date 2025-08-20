@@ -1,9 +1,9 @@
 "use client";
 
+import { Button } from "@brands/ui/components/button";
+import { track } from "@vercel/analytics";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { track } from "@vercel/analytics";
-import { Button } from "@brands/ui/components/button";
 
 interface HeroCTAButtonsProps {
   showPrimaryButton: boolean;
@@ -51,9 +51,7 @@ export default function HeroCTAButtons({
           onClick={handlePrimaryButtonClick}
           asChild
         >
-          <Link href="/products">
-            {primaryButtonText}
-          </Link>
+          <Link href="/products">{primaryButtonText}</Link>
         </Button>
       )}
 

@@ -2,7 +2,6 @@
 import { Check, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-import type { Lang, Locale } from "@brands/utils";
 import { Button } from "@brands/ui/components/button";
 import {
   DropdownMenu,
@@ -12,6 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@brands/ui/components/dropdown-menu";
+import type { Lang, Locale } from "@brands/utils";
 
 interface LocaleSelectorProps {
   currentLang: Lang;
