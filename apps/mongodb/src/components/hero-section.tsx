@@ -17,7 +17,7 @@ export default function HeroSection({
   const t = dict[lang];
 
   return (
-    <section className="relative min-h-[90vh] w-full overflow-hidden">
+    <section className="relative min-h-[90vh] w-full overflow-hidden px-4">
       <div className="container mx-auto flex h-full min-h-[90vh] items-center py-8 lg:py-16">
         <div className="grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="space-y-6 lg:space-y-8">
