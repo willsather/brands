@@ -13,16 +13,21 @@ import dict from "@/lib/dict.json";
 import type { Product } from "@/lib/product";
 import { formatPrice } from "@/lib/utils";
 
+import StoreLocator from "@/components/store-locator";
 import { useCart } from "./cart-provider";
 
 export default function ProductDetail({
   product,
   lang,
   locale,
+  postalCode,
+  showDeliveryText,
 }: {
   product: Product;
   lang: Lang;
   locale: Locale;
+  postalCode: string;
+  showDeliveryText: boolean;
 }) {
   const t = dict[lang];
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
@@ -147,6 +152,12 @@ export default function ProductDetail({
               </span>
             )}
           </div>
+
+          <StoreLocator
+            lang={lang}
+            postalCode={postalCode}
+            enabled={showDeliveryText}
+          />
 
           <div className="flex items-center space-x-4">
             <button

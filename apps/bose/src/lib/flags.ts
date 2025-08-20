@@ -15,6 +15,13 @@ export const showHeroSecondaryButton = flag<boolean>({
   defaultValue: true,
 });
 
+export const showDeliveryText = flag<boolean>({
+  key: "show-delivery-text",
+  description: "enable delivery date text on product page",
+  adapter: edgeConfigAdapter(),
+  defaultValue: true,
+});
+
 export const promoBannerFlag = flag<string>({
   key: "banner-text-variation",
   description: "change the promo banner text",
@@ -90,4 +97,5 @@ export const flags = [
   showHeroSecondaryButton,
   heroVariation,
   promoBannerFlag,
+  showDeliveryText,
 ] as const;
