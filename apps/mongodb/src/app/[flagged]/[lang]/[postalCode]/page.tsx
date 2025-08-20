@@ -1,4 +1,5 @@
 import HeroSection from "@/components/hero-section";
+import Subhero from "@/components/subhero";
 import { flags } from "@/lib/flags";
 import { LangSchema } from "@brands/utils";
 import { deserialize } from "flags/next";
@@ -28,6 +29,8 @@ export default async function Home({
         showPrimaryButton={decisions["show-hero-primary-button"]}
         showSecondaryButton={decisions["show-hero-secondary-button"]}
       />
+      
+      {decisions["show-subhero"] && <Subhero lang={validLang} />}
     </div>
   );
 }
