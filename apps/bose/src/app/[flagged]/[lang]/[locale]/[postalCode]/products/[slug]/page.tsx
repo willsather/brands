@@ -1,4 +1,5 @@
 import ProductDetail from "@/components/product-detail";
+import PersonalizedProducts from "@/components/personalized-products";
 import { getProducts } from "@/lib/product";
 import { LangSchema, LocaleSchema } from "@brands/utils";
 import { notFound } from "next/navigation";
@@ -38,6 +39,7 @@ export default async function ProductPage({
           lang={validLang}
           locale={validLocale}
         />
+        <PersonalizedProducts currentProductSlug={slug} lang={validLang} locale={validLocale} />
       </div>
     </main>
   );
