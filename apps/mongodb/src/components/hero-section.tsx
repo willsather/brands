@@ -1,10 +1,9 @@
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-import { GetStartedButton } from "@/components/get-started-button";
 import dict from "@/lib/dict.json";
 import type { Lang } from "@brands/utils";
-import { Button } from "@brands/ui/components/button";
+
+import HeroCTAButtons from "@/components/hero-cta-buttons";
 
 export default function HeroSection({
   lang,
@@ -45,20 +44,12 @@ export default function HeroSection({
               </p>
             </div>
 
-            <div className="flex items-center gap-4">
-              {showPrimaryButton && <GetStartedButton lang={lang} />}
-
-              {showSecondaryButton && (
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  className="group flex p-0 font-medium text-base text-gray-700 hover:text-gray-900"
-                >
-                  {t.hero.learnMore}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              )}
-            </div>
+            <HeroCTAButtons
+              showPrimaryButton={showPrimaryButton}
+              showSecondaryButton={showSecondaryButton}
+              variation={variation}
+              lang={lang}
+            />
           </div>
 
           <div className="relative">

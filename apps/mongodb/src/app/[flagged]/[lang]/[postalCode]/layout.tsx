@@ -1,4 +1,8 @@
+import { type FlagValuesType, encryptFlagValues } from "flags";
+import { deserialize } from "flags/next";
+import { FlagValues } from "flags/react";
 import type React from "react";
+import { Suspense } from "react";
 
 import { Footer } from "@/components/footer";
 import Navbar from "@/components/navbar";
@@ -6,7 +10,10 @@ import { PromotionalBanner } from "@/components/promotional-banner";
 import { flags } from "@/lib/flags";
 import { LangSchema } from "@brands/utils";
 
-import { deserialize } from "flags/next";
+async function ConfidentialFlagValues({ values }: { values: FlagValuesType }) {
+  const encryptedFlagValues = await encryptFlagValues(values);
+  return <FlagValues values={encryptedFlagValues} />;
+}
 
 export default async function LocaleLayout({
   children,
@@ -36,6 +43,10 @@ export default async function LocaleLayout({
         {children}
         <Footer lang={validLang} />
       </div>
+
+      <Suspense fallback={null}>
+        <ConfidentialFlagValues values={decisions} />
+      </Suspense>
     </>
   );
 }
