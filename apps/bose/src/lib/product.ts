@@ -31,13 +31,17 @@ export async function getProducts() {
   return data.items.products as Product[];
 }
 
-export async function getRelatedProducts(currentProductSlug: string): Promise<Product[]> {
+export async function getRelatedProducts(
+  currentProductSlug: string,
+): Promise<Product[]> {
   // two-second delay
-  await new Promise(resolve => setTimeout(resolve, 2000));
-  
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
   const allProducts = await getProducts();
-  const otherProducts = allProducts.filter(p => p.slug !== currentProductSlug);
-  
+  const otherProducts = allProducts.filter(
+    (p) => p.slug !== currentProductSlug,
+  );
+
   const shuffled = otherProducts.sort(() => Math.random() - 0.5);
   return shuffled.slice(0, 3);
 }

@@ -29,7 +29,7 @@ export default function Subhero({
         <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl bg-white shadow-2xl">
           <div className="grid items-center lg:grid-cols-2">
             {/* Mobile: Icon first, Desktop: Text first */}
-            <div className="order-2 lg:order-1 space-y-6 p-8 lg:p-12">
+            <div className="order-2 space-y-6 p-8 lg:order-1 lg:p-12">
               <h2 className="max-w-md text-3xl text-gray-900 leading-tight md:text-4xl">
                 {t.subhero.title}
               </h2>
@@ -41,17 +41,17 @@ export default function Subhero({
               <Link
                 href="/#gartner-report"
                 onClick={handleReportClick}
-                className="block w-full text-center lg:inline-block lg:w-auto rounded-xl bg-[#001E2B] px-6 py-3 font-medium text-white transition-all duration-200 hover:rounded-full"
+                className="block w-full rounded-xl bg-[#001E2B] px-6 py-3 text-center font-medium text-white transition-all duration-200 hover:rounded-full lg:inline-block lg:w-auto"
               >
                 {t.subhero.ctaText}
               </Link>
             </div>
 
             {/* Mobile: Icon first, Desktop: Icon second */}
-            <div className="order-1 lg:order-2 relative h-full min-h-[300px]">
+            <div className="relative order-1 h-full min-h-[300px] lg:order-2">
               {/* Background blob pattern - extends to edge */}
               <svg
-                className="absolute inset-0 h-full w-full fill-green-100/60 hidden lg:block"
+                className="absolute inset-0 hidden h-full w-full fill-green-100/60 lg:block"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 604 397"
                 preserveAspectRatio="xMaxYMid slice"

@@ -3,11 +3,10 @@ import { notFound } from "next/navigation";
 
 import { LangSchema, LocaleSchema } from "@brands/utils";
 
-import ProductDetail from "@/components/product-detail";
 import PersonalizedProducts from "@/components/personalized-products";
+import ProductDetail from "@/components/product-detail";
 import { flags } from "@/lib/flags";
 import { getProducts } from "@/lib/product";
-
 
 export function generateStaticParams() {
   return [];
@@ -47,7 +46,11 @@ export default async function ProductPage({
           postalCode={postalCode}
           showDeliveryText={decisions["show-delivery-text"]}
         />
-        <PersonalizedProducts currentProductSlug={slug} lang={validLang} locale={validLocale} />
+        <PersonalizedProducts
+          currentProductSlug={slug}
+          lang={validLang}
+          locale={validLocale}
+        />
       </div>
     </main>
   );

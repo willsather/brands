@@ -29,7 +29,7 @@ export default async function Home({
         showPrimaryButton={decisions["show-hero-primary-button"]}
         showSecondaryButton={decisions["show-hero-secondary-button"]}
       />
-      
+
       {decisions["show-subhero"] && <Subhero lang={validLang} />}
     </div>
   );
