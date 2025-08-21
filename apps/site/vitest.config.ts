@@ -1,8 +1,20 @@
-import { defineConfig } from "@brands/vitest-config";
+import path from "node:path";
+import { uiConfig } from "@brands/vitest-config/ui";
+import react from "@vitejs/plugin-react-swc";
+import { configDefaults, mergeConfig } from "vitest/config";
 
-export default defineConfig({
+export default mergeConfig(uiConfig, {
+  plugins: [react()],
   test: {
+    ...configDefaults,
+    globals: true,
     environment: "jsdom",
+    exclude: ["node_modules", "e2e"],
     setupFiles: ["./vitest.setup.ts"],
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
   },
 });
