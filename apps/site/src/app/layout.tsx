@@ -1,12 +1,13 @@
-import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Brand Sites",
-  description:
-    "A collection of brand website clones showcasing Next.js features",
+  title: "Vrands",
+  description: "Brand clones by sather.ws",
+  icons: [{ rel: "icon", url: "/favicon.svg", type: "image/svg+xml" }],
 };
 
 export default function RootLayout({
@@ -16,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${GeistSans.variable} ${GeistMono.variable}`}>{children}</body>
+      <body className={`${GeistSans.variable} ${GeistMono.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
